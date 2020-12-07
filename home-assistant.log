@@ -251,3 +251,17 @@ https://github.com/hacs/integration/issues
 2020-12-06 19:26:18 INFO (Thread-11) [pyhap.hap_server] 192.168.1.151 - "GET /characteristics?id=1731427721.7 HTTP/1.1" 207 -
 2020-12-06 19:26:18 INFO (Thread-11) [pyhap.hap_server] 192.168.1.151 - "GET /characteristics?id=1756264506.7 HTTP/1.1" 207 -
 2020-12-06 19:26:18 INFO (Thread-11) [pyhap.hap_server] 192.168.1.151 - "GET /characteristics?id=2223551531.7 HTTP/1.1" 207 -
+2020-12-06 19:27:26 INFO (Thread-11) [pyhap.hap_server] 192.168.1.151 - "GET /characteristics?id=1.7 HTTP/1.1" 207 -
+2020-12-06 19:27:26 INFO (Thread-11) [pyhap.hap_server] 192.168.1.151 - "GET /characteristics?id=2574997675.7 HTTP/1.1" 207 -
+2020-12-06 19:27:26 INFO (Thread-11) [pyhap.hap_server] 192.168.1.151 - "GET /characteristics?id=1803350595.7 HTTP/1.1" 207 -
+2020-12-06 19:27:26 INFO (Thread-11) [pyhap.hap_server] 192.168.1.151 - "GET /characteristics?id=4158242560.7 HTTP/1.1" 207 -
+2020-12-06 19:27:26 INFO (Thread-11) [pyhap.hap_server] 192.168.1.151 - "GET /characteristics?id=543420814.7 HTTP/1.1" 207 -
+2020-12-06 19:27:26 INFO (Thread-11) [pyhap.hap_server] 192.168.1.151 - "GET /characteristics?id=1731427721.7 HTTP/1.1" 207 -
+2020-12-06 19:27:26 INFO (Thread-11) [pyhap.hap_server] 192.168.1.151 - "GET /characteristics?id=1756264506.7 HTTP/1.1" 207 -
+2020-12-06 19:27:26 INFO (Thread-11) [pyhap.hap_server] 192.168.1.151 - "GET /characteristics?id=2223551531.7 HTTP/1.1" 207 -
+2020-12-06 19:28:06 INFO (SyncWorker_3) [homeassistant.components.zwave] Stopping Z-Wave network
+2020-12-06 19:28:06 INFO (SyncWorker_3) [openzwave] Stop Openzwave network.
+2020-12-06 19:28:06 INFO (SyncWorker_3) [openzwave] ZWave configuration written to user directory.
+2020-12-06 19:28:06 INFO (MainThread) [homeassistant.components.websocket_api.http.connection] [34534845600] Connection closed by client
+2020-12-06 19:28:06 INFO (SyncWorker_8) [pyhap.accessory_driver] Stopping accessory HASS Bridge ZDZK on address 192.168.1.40, port 51828.
+2020-12-06 19:28:06 INFO (SyncWorker_8) [pyhap.hap_server] Stopping HAP server

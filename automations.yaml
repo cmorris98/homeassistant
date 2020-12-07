@@ -8,6 +8,7 @@
   - service: input_boolean.turn_on
     entity_id: input_boolean.living_room_occupied
   mode: single
+
 - id: living_room_motion_off
   alias: Living Room Motion Off
   trigger:
@@ -20,18 +21,18 @@
   - service: input_boolean.turn_off
     entity_id: input_boolean.living_room_occupied
   mode: single
+
 - id: living_room_occupied
-  initial_state: false
   alias: Living Room Occupied
   trigger:
   - platform: state
     entity_id: input_boolean.living_room_occupied
     to: 'on'
   action:
-  - service: notify.mobile_app_craigs_iphone
-    data:
-      message: Living Room Is Occupied
+  - service: switch.turn_on
+    entity_id: switch.zooz_zen25_s2_double_plug_switch
   mode: single
+
 - id: living_room_unoccupied
   alias: Living Room Unoccupied
   trigger:
@@ -39,21 +40,6 @@
     entity_id: input_boolean.living_room_occupied
     to: 'off'
   action:
-  - service: notify.mobile_app_craigs_iphone
-    data:
-      message: Living Room Is Unoccupied
+  - service: switch.turn_off
+    entity_id: switch.zooz_zen25_s2_double_plug_switch
   mode: single
-- id: turn_off_zoos_led
-  alias: Turn off the LED for zooz motion sensor
-  trigger:
-  - platform: state
-    entity_id: input_boolean.set_motion_sensor_led
-    from: 'off'
-    to: 'on'
-  action:
-  - service: zwave.set_config_parameter
-    data:
-      node_id: 5
-      parameter: 7
-      value: 1
-      size: 1

@@ -19,10 +19,6 @@
     event_type: timer.finished
     event_data:
       entity_id: timer.living_room_motion
-  condition:
-  - condition: state
-    entity_id: binary_sensor.living_room_motion
-    state: 'off'
   action:
     - service: input_boolean.turn_off
       entity_id: input_boolean.living_room_occupied

@@ -1,3 +1,4 @@
   living_room_occupied:
     name: 'Living Room Occupied'
+    initial: false
     icon: mdi:walk

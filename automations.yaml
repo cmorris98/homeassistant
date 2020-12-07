@@ -46,3 +46,19 @@
     data:
       message: 'Living Room Is Unoccupied'
   mode: single
+  
+- id: turn_off_zoos_led
+  alias: Turn off the LED for zooz motion sensor
+  trigger:
+  - platform: state
+    entity_id: input_boolean.set_motion_sensor_led
+    from: 'off'
+    to: 'on'
+  action:
+  - service: zwave.set_config_parameter
+    data:
+      node_id: 5
+# Parameter 7 is the LED state
+      parameter: 7
+      value: 1
+      size: 1

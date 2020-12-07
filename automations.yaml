@@ -16,7 +16,7 @@
     entity_id: binary_sensor.living_room_motion
     to: 'off'
     for:
-      seconds: 30
+      minutes: 10
   action:
   - service: input_boolean.turn_off
     entity_id: input_boolean.living_room_occupied

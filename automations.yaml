@@ -8,7 +8,7 @@
   - service: input_boolean.turn_on
     entity_id: input_boolean.living_room_occupied
   mode: single
-
+  
 - id: living_room_motion_off
   alias: Living Room Motion Off
   trigger:
@@ -20,4 +20,28 @@
   action:
   - service: input_boolean.turn_off
     entity_id: input_boolean.living_room_occupied
+  mode: single
+
+- id: living_room_occupied
+  alias: Living Room Occupied
+  trigger:
+  - platform: state
+    entity_id: input_boolean.living_room_occupied
+    to: 'on'
+  action:
+  - service: notify.mobile_app_craigs_iphone
+    data:
+      message: 'Living Room Is Occupied'
+  mode: single
+
+- id: living_room_unoccupied
+  alias: Living Room Unoccupied
+  trigger:
+  - platform: state
+    entity_id: input_boolean.living_room_occupied
+    to: 'off'
+  action:
+  - service: notify.mobile_app_craigs_iphone
+    data:
+      message: 'Living Room Is Unoccupied'
   mode: single

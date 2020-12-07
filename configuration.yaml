@@ -30,5 +30,8 @@ script: !include scripts.yaml
 scene: !include scenes.yaml
 binary_sensor: !include binary_sensors.yaml
 sensor: !include sensors.yaml
-timer: !include  timers.yaml
-    
+# timer: !include  timers.yaml
+
+timer:
+  living_room_motion:
+    duration: '00:00:30'

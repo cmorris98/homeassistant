@@ -1,18 +1,7 @@
-- id: '1607221602539'
-  alias: Test Automation
-  description: ''
-  trigger:
-  - platform: state
-    entity_id: binary_sensor.aaa_sensor
-    from: 'off'
-    to: 'on'
-  action:
-  - service: notify.mobile_app_craigs_iphone
-    data:
-      message: Motion Detected
-  mode: single
+
 - id: '1607301877677'
   alias: aaa motion detected
+  initial_state: false
   description: ''
   trigger:
   - platform: state
@@ -27,4 +16,18 @@
   - service: input_boolean.turn_on
     data: {}
     entity_id: input_boolean.aaa_home
+  mode: single
+
+- id: living_room_motion
+  alias: 'Living Room Motion'
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.family_room_motion
+    from: 'off'
+    to: 'on'
+  action:
+    - service: timer.start
+      entity_id: timer.living_room_motion
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.aaa_home
   mode: single

@@ -23,6 +23,7 @@
   mode: single
 
 - id: living_room_occupied
+  initial_state: false
   alias: Living Room Occupied
   trigger:
   - platform: state

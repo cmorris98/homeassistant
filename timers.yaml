@@ -1,3 +1,2 @@
-timer:
-  living_room_motion:
-    duration: '00:00:30'
+- id: living_room_motion
+  duration: '00:00:30'

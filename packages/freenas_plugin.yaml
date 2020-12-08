@@ -14,4 +14,4 @@ panel_iframe:
     title: File Editor
     icon: mdi:wrench
     require_admin: true
-    url: http://192.168.1.40:3218
+    url: http://192.168.1.206:3218

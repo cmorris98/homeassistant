@@ -1,5 +1,6 @@
 - id: living_room_motion_on
   alias: Living Room Motion On
+  initial_state: true
   trigger:
   - platform: state
     entity_id: binary_sensor.living_room_motion
@@ -11,6 +12,7 @@
 
 - id: living_room_motion_off
   alias: Living Room Motion Off
+  initial_state: true
   trigger:
   - platform: state
     entity_id: binary_sensor.living_room_motion
@@ -24,6 +26,7 @@
 
 - id: living_room_occupied
   alias: Living Room Occupied
+  initial_state: true
   trigger:
   - platform: state
     entity_id: input_boolean.living_room_occupied
@@ -35,6 +38,7 @@
 
 - id: living_room_unoccupied
   alias: Living Room Unoccupied
+  initial_state: true
   trigger:
   - platform: state
     entity_id: input_boolean.living_room_occupied

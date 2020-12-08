@@ -2,8 +2,3 @@
     name: 'Living Room Occupied'
     initial: false
     icon: mdi:walk
-
-  set_motion_sensor_led:
-    name: 'Set LED status for motion detectors'
-    initial: false
-    icon: mdi:led-off

@@ -1,6 +1,7 @@
 secrets.yaml
 *.xml
 *.db
+*.db-shm
 *.sqlite
 *.log
 .storage/

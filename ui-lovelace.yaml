@@ -405,7 +405,7 @@ views:
               right: 13%
               transform: 'translate(0%, 0)'
         image:
-          http://192.168.1.207:8123/local/main-floor-plan.jpg
+          http://192.168.1.206:8123/local/main-floor-plan.jpg
   
   - title: Test
     path: test

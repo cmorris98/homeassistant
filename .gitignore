@@ -5,6 +5,7 @@ secrets.yaml
 *.sqlite
 *.log
 .storage/
+.cloud/
 OZW_Log.txt
 harmony_harmony_hub.conf
 known_devices.yaml

@@ -1,3 +1,14 @@
+- id: set_default_theme
+  alias: 'Set default them on startup'
+  initial_state: true
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+    service: frontend.set_theme
+    data:
+      name: ios-dark-mode-light-green
+
 - id: living_room_motion_on
   alias: Living Room Motion On
   initial_state: true
@@ -33,7 +44,7 @@
     to: 'on'
   action:
   - service: switch.turn_on
-    entity_id: switch.zooz_zen25_s2_double_plug_switch
+    entity_id: switch.living_room_left_plug_switch
   mode: single
 
 - id: living_room_unoccupied
@@ -45,5 +56,29 @@
     to: 'off'
   action:
   - service: switch.turn_off
-    entity_id: switch.zooz_zen25_s2_double_plug_switch
+    entity_id: switch.living_room_left_plug_switch
+  mode: single
+
+- id: master_bathroom_high_humidity
+  alias: Master Bathroom High Humidity
+  trigger:
+  - above: 60
+    entity_id: sensor.logans_room_sensor_relative_humidity
+    platform: numeric_state
+  action:
+    service: notify.mobile_app_craigs_iphone
+    data:
+      message: 'Master bathroom high humidity'
+  mode: single
+
+- id: master_bathroom_low_humidity
+  alias: Master Bathroom Low Humidity
+  trigger:
+  - below: 58
+    entity_id: sensor.logans_room_sensor_relative_humidity
+    platform: numeric_state
+  action:
+    service: notify.mobile_app_craigs_iphone
+    data:
+      message: 'Master bathroom low humidity'
   mode: single

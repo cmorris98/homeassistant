@@ -1,0 +1,57 @@
+filter:
+  include_entities:
+    # Logans room
+    - sensor.logans_room_sensor_temperature
+    - sensor.logans_room_sensor_relative_humidity
+    - switch.logans_room_left_plug_switch
+    - switch.logans_room_right_plug_switch
+    - switch.logans_room_usb_plug_switch
+    - binary_sensor.logans_room_motion
+    - script.good_morning_logan
+    - script.good_night_logan
+
+    # Living Room
+    - sensor.living_room_sensor_temperature
+    - sensor.living_room_sensor_relative_humidity
+    - switch.living_room_left_plug_switch
+    - switch.living_room_right_plug_switch
+    - switch.living_room_usb_plub_switch
+    - input_boolean.living_room_occupied
+    - binary_sensor.living_room_motion
+    - vacuum.robi
+  
+entity_config:
+  sensor.logans_room_sensor_temperature:
+    name: Logans Room Temperature
+  sensor.logans_room_sensor_relative_humidity:
+    name: Logans Room Humidity
+  switch.logans_room_left_plug_switch:
+    name: Logans Room Sound Machine
+  switch.logans_room_right_plug_switch:
+    name: Logans Room Right Plug
+  switch.logans_room_usb_plug_switch:
+    name: Logans Room USB
+  binary_sensor.logans_room_motion:
+    name: Logans Room Motion
+  script.good_morning_logan:
+    name: Logans Room Good Morning
+  script.good_night_logan:
+    name: Logans Room Good Night
+
+  sensor.living_room_sensor_temperature:
+    name: Living Room Temperature
+  sensor.living_room_sensor_relative_humidity:
+    name: Living Room Humidity
+  switch.living_room_left_plug_switch:
+    name: Living Room Christmas Tree
+  switch.living_room_right_plug_switch:
+    name: Living Room Right Plug
+  switch.living_room_usb_plub_switch:
+    name: Living Room USB
+  input_boolean.living_room_occupied:
+    name: Living Room Occupied
+  binary_sensor.living_room_motion:
+    name: Living Room Motion
+  vacuum.robi:
+    name: Robi
+    linked_battery_sensor: sensor.robi_battery

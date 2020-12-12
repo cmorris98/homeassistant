@@ -1,1 +1,89 @@
+platform: template
+sensors:
+  living_room_climate:
+    friendly_name: Living Room
+    device_class: temperature
+    value_template: >-
+      {{states.sensor.living_room_sensor_temperature.state}} °F  |  {{states.sensor.living_room_sensor_relative_humidity.state}} % | {{states.sensor.living_room_sensor_luminance.state}} %
+    
+  kitchen_climate:
+    friendly_name: Kitchen
+    device_class: temperature
+    value_template: >-
+       {{states.sensor.kitchen_sensor_temperature.state}} °F  |  {{states.sensor.kitchen_sensor_relative_humidity.state}} % | {{states.sensor.kitchen_sensor_luminance.state}} %
+   
+  pantry_climate:
+    friendly_name: Pantry
+    device_class: temperature
+    value_template: >-
+      {{states.sensor.pantry_sensor_temperature.state}} °F  |  {{states.sensor.pantry_sensor_relative_humidity.state}} % | {{states.sensor.pantry_sensor_luminance.state}} %
+   
+  master_bedroom_climate:
+    friendly_name: Master Bedroom
+    device_class: temperature
+    value_template: >-
+      {{states.sensor.master_bedroom_sensor_temperature.state}} °F  |  {{states.sensor.master_bedroom_sensor_relative_humidity.state}} % | {{states.sensor.master_bedroom_sensor_luminance.state}} %
 
+  master_bathroom_climate:
+    friendly_name: Master Bathroom
+    device_class: temperature
+    value_template: >-
+      {{states.sensor.master_bathroom_sensor_temperature.state}} °F  |  {{states.sensor.master_bathroom_sensor_relative_humidity.state}} % | {{states.sensor.master_bathroom_sensor_luminance.state}} %
+
+  laundry_room_climate:
+    friendly_name: Laundry Room
+    device_class: temperature
+    value_template: >-
+      {{states.sensor.laundry_room_sensor_temperature.state}} °F  |  {{states.sensor.laundry_room_sensor_relative_humidity.state}} % | {{states.sensor.laundry_room_sensor_luminance.state}} %
+
+  mud_room_climate:
+    friendly_name: Mud Room
+    device_class: temperature
+    value_template: >-
+      {{states.sensor.mud_room_sensor_temperature.state}} °F  |  {{states.sensor.mud_room_sensor_relative_humidity.state}} % | {{states.sensor.mud_room_sensor_luminance.state}} %
+  
+  jocelyns_room_climate:
+    friendly_name: Jocelyns Room
+    device_class: temperature
+    value_template: >-
+      {{states.sensor.jocelyns_room_sensor_temperature.state}} °F  |  {{states.sensor.jocelyns_room_sensor_relative_humidity.state}} % | {{states.sensor.jocelyns_room_sensor_luminance.state}} %
+
+  logans_room_climate:
+    friendly_name: Logans Room
+    device_class: temperature
+    value_template: >-
+      {{states.sensor.logans_room_sensor_temperature.state}} °F  |  {{states.sensor.logans_room_sensor_relative_humidity.state}} % | {{states.sensor.logans_room_sensor_luminance.state}} %
+
+  bathroom_climate:
+    friendly_name: Bathroom
+    device_class: temperature
+    value_template: >-
+      {{states.sensor.bathroom_sensor_temperature.state}} °F  |  {{states.sensor.bathroom_sensor_relative_humidity.state}} % | {{states.sensor.bathroom_sensor_luminance.state}} %
+
+  garage_climate:
+    friendly_name: Garage
+    device_class: temperature
+    value_template: >-
+      {{states.sensor.garage_sensor_temperature.state}} °F  |  {{states.sensor.garage_sensor_relative_humidity.state}} % | {{states.sensor.garage_sensor_luminance.state}} %
+
+  front_yard_climate:
+    friendly_name: Front Yard
+    device_class: temperature
+    value_template: >-
+      {{states.sensor.front_yard_sensor_temperature.state}} °F  |  {{states.sensor.front_yard_sensor_relative_humidity.state}} % | {{states.sensor.front_yard_sensor_luminance.state}} %
+
+  back_yard_climate:
+    friendly_name: Back Yard
+    device_class: temperature
+    value_template: >-
+      {{states.sensor.back_yard_sensor_temperature.state}} °F  |  {{states.sensor.back_yard_sensor_relative_humidity.state}} % | {{states.sensor.back_yard_sensor_luminance.state}} %
+
+  # day:
+  #   friendly_name: Daytime Sensor
+  #   value_template: >-
+  #     {{ state_attr('sun.sun', 'elevation')|float > 0 }}
+
+  # night:
+  #   friendly_name: Nighttime Sensor
+  #   value_template: >-
+  #     {{ state_attr('sun.sun', 'elevation')|float <= 0 }}

@@ -1,8 +1,8 @@
-title: Home
 views:
   - title: Main Floor
     path: main-floor
     panel: false
+    icon: mdi:floor-plan
     badges: []
     cards:
       - type: picture-elements
@@ -10,26 +10,18 @@ views:
           #
           # Labels outside diagram
           #
-          - type: state-label
-            entity: sensor.speedtest_download
-            suffix: ' Down'
-            style:
-              top: 0%
-              left: 0%
-              color: black
-              transform: 'translate(0%, 0%)'
+          # - type: state-label
+          #   entity: sensor.speedtest_download
+          #   suffix: ' Down'
+          #   style:
+          #     top: 0%
+          #     left: 0%
+          #     color: black
+          #     transform: 'translate(0%, 0%)'
           
           #
           # Kitchen
           #
-          - type: state-label
-            entity: sensor.speedtest_download
-            suffix: ' Down'
-            style:
-              top: 0%
-              left: 0%
-              color: black
-              transform: 'translate(0%, 0%)'
           - type: state-icon
             entity: vacuum.robi
             style:
@@ -38,7 +30,7 @@ views:
               transform: rotate(270deg)
           - type: state-icon
             icon: 'mdi:lightbulb'
-            entity: switch.zooz_zen25_s2_double_plug_switch_2
+            entity: switch.living_room_right_plug_switch
             tap_action:
               action: toggle
             style:
@@ -47,7 +39,7 @@ views:
               transform: 'translate(0%, 0)'
           - type: state-icon
             icon: 'mdi:lightbulb'
-            entity: switch.zooz_zen25_s2_double_plug_switch_2
+            entity: switch.living_room_right_plug_switch
             tap_action:
               action: toggle
             style:
@@ -56,7 +48,7 @@ views:
               transform: 'translate(0%, 0)'
           - type: state-icon
             icon: 'mdi:lightbulb'
-            entity: switch.zooz_zen25_s2_double_plug_switch_2
+            entity: switch.living_room_right_plug_switch
             tap_action:
               action: toggle
             style:
@@ -69,7 +61,7 @@ views:
           #
           - type: state-icon
             icon: 'mdi:lightbulb'
-            entity: switch.zooz_zen25_s2_double_plug_switch_2
+            entity: switch.living_room_right_plug_switch
             tap_action:
               action: toggle
             style:
@@ -77,21 +69,21 @@ views:
               right: 28%
               transform: 'translate(0%, 0)'
           - type: state-label
-            entity: sensor.zooz_zse40_4_in_1_sensor_temperature
+            entity: sensor.living_room_sensor_temperature
             style:
               top: 38%
               left: 58%
               color: blue
               transform: 'translate(0%, 0%)'
           - type: state-label
-            entity: sensor.zooz_zse40_4_in_1_sensor_relative_humidity
+            entity: sensor.living_room_sensor_relative_humidity
             style:
               top: 41%
               left: 58%
               color: BlueViolet
               transform: 'translate(0%, 0%)'
           - type: state-label
-            entity: sensor.zooz_zse40_4_in_1_sensor_luminance
+            entity: sensor.living_room_sensor_luminance
             style:
               top: 44%
               left: 58%
@@ -105,7 +97,7 @@ views:
               transform: 'translate(0%, 0%)'
           - type: state-icon
             icon: 'mdi:pine-tree'
-            entity: switch.zooz_zen25_s2_double_plug_switch
+            entity: switch.living_room_left_plug_switch
             tap_action:
               action: toggle
             style:
@@ -114,7 +106,7 @@ views:
               transform: 'translate(0%, 0%)'
           - type: state-icon
             icon: 'mdi:power-plug'
-            entity: switch.zooz_zen25_s2_double_plug_switch_2
+            entity: switch.living_room_right_plug_switch
             tap_action:
               action: toggle
             style:
@@ -173,7 +165,7 @@ views:
           #
           - type: state-icon
             icon: 'mdi:lightbulb'
-            entity: switch.zooz_zen25_s2_double_plug_switch_2
+            entity: switch.living_room_right_plug_switch
             tap_action:
               action: toggle
             style:
@@ -182,7 +174,7 @@ views:
               transform: 'translate(0%, 0)'
           - type: state-icon
             icon: 'mdi:walk'
-            entity: switch.zooz_zen25_s2_double_plug_switch_2
+            entity: switch.living_room_right_plug_switch
             tap_action:
               action: toggle
             style:
@@ -190,7 +182,7 @@ views:
               left: 45%
               transform: 'translate(0%, 0%)'
           - type: state-label
-            entity: sensor.zooz_zse40_4_in_1_sensor_temperature
+            entity: sensor.living_room_sensor_temperature
             style:
               bottom: 14%
               left: 25%
@@ -202,7 +194,7 @@ views:
           #
           - type: state-icon
             icon: 'mdi:lightbulb'
-            entity: switch.zooz_zen25_s2_double_plug_switch_2
+            entity: switch.living_room_right_plug_switch
             tap_action:
               action: toggle
             style:
@@ -211,7 +203,7 @@ views:
               transform: 'translate(0%, 0)'
           - type: state-icon
             icon: 'mdi:walk'
-            entity: switch.zooz_zen25_s2_double_plug_switch_2
+            entity: switch.living_room_right_plug_switch
             tap_action:
               action: toggle
             style:
@@ -219,7 +211,7 @@ views:
               left: 33%
               transform: 'translate(0%, 0%)'
           - type: state-label
-            entity: sensor.zooz_zse40_4_in_1_sensor_temperature
+            entity: sensor.living_room_sensor_temperature
             style:
               bottom: 39%
               left: 25%
@@ -227,10 +219,10 @@ views:
               transform: 'translate(0%, 0%)'
 
           #
-          # Logans Room
+          # Jocelyns Room
           #
           - type: state-label
-            entity: sensor.zooz_zse40_4_in_1_sensor_temperature
+            entity: sensor.living_room_sensor_temperature
             style:
               bottom: 26%
               left: 66%
@@ -238,7 +230,7 @@ views:
               transform: 'translate(0%, 0%)'
           - type: state-icon
             icon: 'mdi:walk'
-            entity: switch.zooz_zen25_s2_double_plug_switch_2
+            entity: switch.living_room_right_plug_switch
             tap_action:
               action: toggle
             style:
@@ -247,7 +239,7 @@ views:
               transform: 'translate(0%, 0%)'
           - type: state-icon
             icon: 'mdi:lightbulb'
-            entity: switch.zooz_zen25_s2_double_plug_switch_2
+            entity: switch.living_room_right_plug_switch
             tap_action:
               action: toggle
             style:
@@ -256,7 +248,7 @@ views:
               transform: 'translate(0%, 0%)'
           - type: state-icon
             icon: 'mdi:spotify'
-            entity: switch.zooz_zen25_s2_double_plug_switch_2
+            entity: switch.living_room_right_plug_switch
             tap_action:
               action: toggle
             style:
@@ -265,10 +257,10 @@ views:
               transform: 'translate(0%, 0%)'
 
           #
-          # Jocelyns Room
+          # Logans Room
           #
           - type: state-label
-            entity: sensor.zooz_zse40_4_in_1_sensor_temperature
+            entity: sensor.logans_room_sensor_temperature
             style:
               bottom: 25%
               right: 5%
@@ -276,7 +268,7 @@ views:
               transform: 'translate(0%, 0%)'
           - type: state-icon
             icon: 'mdi:walk'
-            entity: switch.zooz_zen25_s2_double_plug_switch_2
+            entity: binary_sensor.logans_room_motion
             tap_action:
               action: toggle
             style:
@@ -285,7 +277,7 @@ views:
               transform: 'translate(0%, 0%)'
           - type: state-icon
             icon: 'mdi:lightbulb'
-            entity: switch.zooz_zen25_s2_double_plug_switch_2
+            entity: switch.logans_room_right_plug_switch
             tap_action:
               action: toggle
             style:
@@ -294,7 +286,7 @@ views:
               transform: 'translate(0%, 0%)'
           - type: state-icon
             icon: 'mdi:spotify'
-            entity: switch.zooz_zen25_s2_double_plug_switch_2
+            entity: switch.logans_room_left_plug_switch
             tap_action:
               action: toggle
             style:
@@ -306,7 +298,7 @@ views:
           # Master Bedroom
           #
           - type: state-label
-            entity: sensor.zooz_zse40_4_in_1_sensor_temperature
+            entity: sensor.living_room_sensor_temperature
             style:
               top: 28%
               left: 40%
@@ -314,7 +306,7 @@ views:
               transform: 'translate(0%, 0%)'
           - type: state-icon
             icon: 'mdi:walk'
-            entity: switch.zooz_zen25_s2_double_plug_switch_2
+            entity: switch.living_room_right_plug_switch
             tap_action:
               action: toggle
             style:
@@ -323,7 +315,7 @@ views:
               transform: 'translate(0%, 0%)'
           - type: state-icon
             icon: 'mdi:lightbulb'
-            entity: switch.zooz_zen25_s2_double_plug_switch_2
+            entity: switch.living_room_right_plug_switch
             tap_action:
               action: toggle
             style:
@@ -332,7 +324,7 @@ views:
               transform: 'translate(0%, 0%)'
           - type: state-icon
             icon: 'mdi:spotify'
-            entity: switch.zooz_zen25_s2_double_plug_switch_2
+            entity: switch.living_room_right_plug_switch
             tap_action:
               action: toggle
             style:
@@ -345,7 +337,7 @@ views:
           #
           - type: state-icon
             icon: 'mdi:lightbulb'
-            entity: switch.zooz_zen25_s2_double_plug_switch_2
+            entity: switch.living_room_right_plug_switch
             tap_action:
               action: toggle
             style:
@@ -358,7 +350,7 @@ views:
           #
           - type: state-icon
             icon: 'mdi:lightbulb'
-            entity: switch.zooz_zen25_s2_double_plug_switch_2
+            entity: switch.living_room_right_plug_switch
             tap_action:
               action: toggle
             style:
@@ -371,7 +363,7 @@ views:
           #
           - type: state-icon
             icon: 'mdi:lightbulb'
-            entity: switch.zooz_zen25_s2_double_plug_switch_2
+            entity: switch.living_room_right_plug_switch
             tap_action:
               action: toggle
             style:
@@ -384,7 +376,7 @@ views:
           #
           - type: state-icon
             icon: 'mdi:lightbulb'
-            entity: switch.zooz_zen25_s2_double_plug_switch_2
+            entity: switch.living_room_right_plug_switch
             tap_action:
               action: toggle
             style:
@@ -397,7 +389,7 @@ views:
           #
           - type: state-icon
             icon: 'mdi:lightbulb'
-            entity: switch.zooz_zen25_s2_double_plug_switch_2
+            entity: switch.living_room_right_plug_switch
             tap_action:
               action: toggle
             style:
@@ -405,21 +397,107 @@ views:
               right: 13%
               transform: 'translate(0%, 0)'
         image:
-          http://192.168.1.206:8123/local/main-floor-plan.jpg
+          /local/main-floor-plan.png
   
-  - title: Test
-    path: test
+  - title: Temperature
+    path: temperature
+    icon: 'mdi:home-thermometer'
     badges: []
     cards:
-      - type: weather-forecast
-        entity: weather.home
-        show_forecast: true
       - type: entities
         entities:
-          - entity: input_boolean.living_room_occupied
-          - entity: sensor.plex_plex_media_server
-      - type: sensor
-        entity: sensor.zooz_zse40_4_in_1_sensor_temperature
-        name: Living Room
-        detail: 1
-        graph: line
+          - entity: sensor.living_room_climate
+          - entity: sensor.kitchen_climate
+          - entity: sensor.pantry_climate
+          - entity: sensor.laundry_room_climate
+          - entity: sensor.mud_room_climate
+          - entity: sensor.master_bedroom_climate
+          - entity: sensor.master_bathroom_climate
+          - entity: sensor.jocelyns_room_climate
+          - entity: sensor.logans_room_climate
+          - entity: sensor.bathroom_climate
+          - entity: sensor.garage_climate
+          - entity: sensor.front_yard_climate
+          - entity: sensor.back_yard_climate
+
+  - title: Temperature2
+    path: temperature2
+    icon: mdi:thermometer
+    badges: []
+    cards:
+      - type: custom:mini-graph-card
+        name: Temperature
+        icon: mdi:thermometer
+        points_per_hour: 2
+        entities:
+          - entity: sensor.living_room_sensor_temperature
+            name: Living Room
+            show_fill: false
+          - entity: sensor.logans_room_sensor_temperature
+            name: Logans Room
+            show_fill: false
+          - entity: binary_sensor.night
+            color: black
+            name: Night
+            show_line: false
+            show_points: false
+            show_legend: false
+            y_axis: secondary
+
+      - type: custom:mini-graph-card
+        name: Humidity
+        icon: mdi:water-percent
+        points_per_hour: 2
+        entities:
+          - entity: sensor.living_room_sensor_relative_humidity
+            name: Living Room
+            show_fill: false
+          - entity: sensor.logans_room_sensor_relative_humidity
+            name: Logans Room
+            show_fill: false
+          - entity: binary_sensor.night
+            color: black
+            name: Night
+            show_line: false
+            show_points: false
+            show_legend: false
+            y_axis: secondary
+
+      - type: custom:mini-graph-card
+        name: Luminance
+        icon: mdi:lightbulb-outline
+        points_per_hour: 2
+        entities:
+          - entity: sensor.living_room_sensor_luminance
+            name: Living Room
+            show_fill: false
+          - entity: sensor.logans_room_sensor_luminance
+            name: Logans Room
+            show_fill: false
+          - entity: binary_sensor.night
+            color: black
+            name: Night
+            show_line: false
+            show_points: false
+            show_legend: false
+            y_axis: secondary
+
+      - type: custom:mini-graph-card
+        name: Night
+        icon: mdi:lightbulb-outline
+        points_per_hour: 2
+        entities:
+          - entity: binary_sensor.night
+            color: black
+            name: Night
+        state_map:
+          - value: "on"
+            label: night
+          - value: "off"
+            label: day
+
+      - type: custom:weather-card
+        entity: weather.openweathermap
+        name: Weather
+
+title: Home2

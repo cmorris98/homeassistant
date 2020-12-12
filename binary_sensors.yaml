@@ -3,4 +3,18 @@
     living_room_motion:
       friendly_name: "Living Room Motion"
       device_class: motion
-      value_template: "{{ is_state('sensor.zooz_zse40_4_in_1_sensor_burglar', '8') }}"
+      value_template: >-
+        {{ is_state('sensor.living_room_sensor_burglar', '8') }}
+    logans_room_motion:
+          friendly_name: "Living Room Motion"
+          device_class: motion
+          value_template: >-
+            {{ is_state('sensor.logans_room_sensor_burglar', '8') }}
+    night:
+      friendly_name: "Nighttime Binary Sensor"
+      value_template: >-
+        {{ state_attr('sun.sun', 'elevation')|float <= 0 }}
+    day:
+      friendly_name: "Daytime Binary Sensor"
+      value_template: >-
+        {{ state_attr('sun.sun', 'elevation')|float > 0 }}

@@ -20,10 +20,24 @@ logger:
 # https://www.home-assistant.io/integrations/default_config
 default_config:
 
+# Lovelace UI elements
+lovelace:
+  mode: yaml
+  resources:
+    - url: /local/community/mini-graph-card/mini-graph-card-bundle.js
+      type: module
+    - url: /local/custom-lovelace/weather-card/weather-card.js
+      type: module
+
+# Frontend stuff
+frontend:
+  themes: !include_dir_merge_named themes
+
 # Text to speech
 tts:
   - platform: google_translate
 
+homekit: !include homekit.yaml
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml

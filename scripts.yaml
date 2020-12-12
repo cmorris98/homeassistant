@@ -1,2 +1,26 @@
-## scripts.yaml
-# https://www.home-assistant.io/components/script/
+good_morning_logan:
+  alias: Good Morning Logan
+  icon: mdi:weather-sunset-up
+  description: Turns off sound machine and turns lights on
+  sequence:
+    - service: switch.turn_off
+      data:
+        entity_id: switch.logans_room_left_plug_switch
+    - delay:
+        seconds: 30
+    - service: switch.turn_on
+      data:
+        entity_id: switch.logans_room_right_plug_switch
+
+good_night_logan:
+  alias: Good Night Logan
+  icon: mdi:weather-sunset-down
+  description: Turns on the sound machine and turns lights off
+  sequence:
+    - service: switch.turn_on
+      data:
+        entity_id: switch.logans_room_left_plug_switch
+    - service: switch.turn_off
+      data:
+        entity_id: switch.logans_room_right_plug_switch
+

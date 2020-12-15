@@ -12,12 +12,14 @@
 
 - id: living_room_motion
   alias: Living Room Motion
+  description: ''
   use_blueprint:
-    path: automation/homeassistant/motion_switch.yaml
+    path: homeassistant/motion_switch.yaml
     input:
-      motion_sensor: binary_sensor.living_room_motion
-      target_switch: switch.living_room_right_plug_switch
-      no_motion_wait: 5
+      motion_entity: binary_sensor.living_room_motion
+      switch_target:
+        entity_id: switch.living_room_right_plug_switch
+      no_motion_wait: 600
 
 - id: living_room_motion_on
   alias: Living Room Motion On

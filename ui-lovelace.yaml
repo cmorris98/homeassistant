@@ -91,7 +91,7 @@ views:
               color: CornflowerBlue
               transform: 'translate(0%, 0%)'
           - type: state-icon
-            entity: input_boolean.living_room_occupied
+            entity: binary_sensor.living_room_motion
             style:
               top: 33%
               left: 71%
@@ -347,7 +347,7 @@ views:
               transform: 'translate(0%, 0)'
 
           #
-          # Master Bath
+          # Master Bathroom
           #
           - type: state-icon
             icon: 'mdi:lightbulb'
@@ -457,22 +457,13 @@ views:
           - entity: sensor.sun_elevation
             color: orange
             name: Sun
-        # state_map:
-        #   - value: "above_horizon"
-        #     label: Day
-        #   - value: "below_horizon"
-        #     label: Night
 
   - title: Dashboard
     path: dashboard
     icon: mdi:view-dashboard
     badges: []
     cards:
-      # - type: horizontal-stack
-        # title: Horizonal Stack 1
-        # cards:
       - type: vertical-stack
-        # title: Vertical Stack 1
         cards:
           - type: custom:weather-card
             entity: weather.openweathermap

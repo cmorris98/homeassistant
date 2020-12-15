@@ -21,64 +21,64 @@
         entity_id: switch.living_room_right_plug_switch
       no_motion_wait: 600
 
-- id: living_room_motion_on
-  alias: Living Room Motion On
-  initial_state: true
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.living_room_motion
-      to: "on"
-  condition: []
-  action:
-    - service: input_boolean.turn_on
-      entity_id: input_boolean.living_room_occupied
-  mode: single
+# - id: living_room_motion_on
+#   alias: Living Room Motion On
+#   initial_state: true
+#   trigger:
+#     - platform: state
+#       entity_id: binary_sensor.living_room_motion
+#       to: "on"
+#   condition: []
+#   action:
+#     - service: input_boolean.turn_on
+#       entity_id: input_boolean.living_room_occupied
+#   mode: single
 
-- id: living_room_motion_off
-  alias: Living Room Motion Off
-  initial_state: true
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.living_room_motion
-      to: "off"
-      for:
-        minutes: 10
-  condition: []
-  action:
-    - service: input_boolean.turn_off
-      entity_id: input_boolean.living_room_occupied
-  mode: single
+# - id: living_room_motion_off
+#   alias: Living Room Motion Off
+#   initial_state: true
+#   trigger:
+#     - platform: state
+#       entity_id: binary_sensor.living_room_motion
+#       to: "off"
+#       for:
+#         minutes: 10
+#   condition: []
+#   action:
+#     - service: input_boolean.turn_off
+#       entity_id: input_boolean.living_room_occupied
+#   mode: single
 
-- id: living_room_occupied
-  alias: Living Room Occupied
-  initial_state: true
-  trigger:
-    - platform: state
-      entity_id: input_boolean.living_room_occupied
-      to: "on"
-  condition: []
-  action:
-    - service: switch.turn_on
-      entity_id: switch.living_room_left_plug_switch
-  mode: single
+# - id: living_room_occupied
+#   alias: Living Room Occupied
+#   initial_state: true
+#   trigger:
+#     - platform: state
+#       entity_id: input_boolean.living_room_occupied
+#       to: "on"
+#   condition: []
+#   action:
+#     - service: switch.turn_on
+#       entity_id: switch.living_room_left_plug_switch
+#   mode: single
 
-- id: living_room_unoccupied
-  alias: Living Room Unoccupied
-  initial_state: true
-  trigger:
-    - platform: state
-      entity_id: input_boolean.living_room_occupied
-      to: "off"
-  condition: []
-  action:
-    - service: switch.turn_off
-      entity_id: switch.living_room_left_plug_switch
-  mode: single
+# - id: living_room_unoccupied
+#   alias: Living Room Unoccupied
+#   initial_state: true
+#   trigger:
+#     - platform: state
+#       entity_id: input_boolean.living_room_occupied
+#       to: "off"
+#   condition: []
+#   action:
+#     - service: switch.turn_off
+#       entity_id: switch.living_room_left_plug_switch
+#   mode: single
 
 - id: master_bathroom_high_humidity
   alias: Master Bathroom High Humidity
   trigger:
-    - above: 60
+    - above: 50
       entity_id: sensor.logans_room_sensor_relative_humidity
       platform: numeric_state
   condition: []
@@ -91,7 +91,7 @@
 - id: master_bathroom_low_humidity
   alias: Master Bathroom Low Humidity
   trigger:
-    - below: 58
+    - below: 49
       entity_id: sensor.logans_room_sensor_relative_humidity
       platform: numeric_state
   condition: []

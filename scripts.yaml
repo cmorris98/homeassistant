@@ -31,13 +31,10 @@ occupancy_home:
   sequence:
     - service: switch.turn_on
       data:
-        entity_id: switch.logans_room_right_plug_switch
+        entity_id: switch.living_room_right_plug_switch
     - service: switch.turn_on
       data:
-        entity_id: switch.living_room_right_plug_switch
-    # - service: notify.mobile_app_craigs_iphone
-    #   data:
-    #     message: Occupancy Set To Home
+        entity_id: switch.living_room_left_plug_switch
 
 occupancy_away:
   alias: Occupancy Away
@@ -46,10 +43,10 @@ occupancy_away:
   sequence:
     - service: switch.turn_off
       data:
-        entity_id: switch.logans_room_right_plug_switch
+        entity_id: switch.living_room_right_plug_switch
     - service: switch.turn_off
       data:
-        entity_id: switch.living_room_right_plug_switch
+        entity_id: switch.living_room_left_plug_switch
 
 occupancy_sleep:
   alias: Occupancy Sleep
@@ -58,10 +55,10 @@ occupancy_sleep:
   sequence:
     - service: switch.turn_off
       data:
-        entity_id: switch.logans_room_right_plug_switch
+        entity_id: switch.living_room_right_plug_switch
     - service: switch.turn_off
       data:
-        entity_id: switch.living_room_right_plug_switch
+        entity_id: switch.living_room_left_plug_switch
 
 occupancy_vacation:
   alias: Occupancy Vacation
@@ -70,8 +67,8 @@ occupancy_vacation:
   sequence:
     - service: switch.turn_off
       data:
-        entity_id: switch.logans_room_right_plug_switch
+        entity_id: switch.living_room_right_plug_switch
     - service: switch.turn_off
       data:
-        entity_id: switch.living_room_right_plug_switch
+        entity_id: switch.living_room_left_plug_switch
 

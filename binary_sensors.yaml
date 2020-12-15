@@ -1,20 +1,40 @@
 - platform: template
   sensors:
     living_room_motion:
-      friendly_name: "Living Room Motion"
+      friendly_name: Living Room Motion
       device_class: motion
       value_template: >-
         {{ is_state('sensor.living_room_sensor_burglar', '8') }}
     logans_room_motion:
-          friendly_name: "Living Room Motion"
+          friendly_name: Logans Room Motion
           device_class: motion
           value_template: >-
             {{ is_state('sensor.logans_room_sensor_burglar', '8') }}
     night:
-      friendly_name: "Nighttime Binary Sensor"
+      friendly_name: Nighttime Binary Sensor
       value_template: >-
         {{ state_attr('sun.sun', 'elevation')|float <= 0 }}
     day:
-      friendly_name: "Daytime Binary Sensor"
+      friendly_name: Daytime Binary Sensor
       value_template: >-
         {{ state_attr('sun.sun', 'elevation')|float > 0 }}
+    
+    occupancy_home:
+      friendly_name: Occupancy Home Sensor
+      value_template: >-
+        {{ is_state('input_select.occupancy', 'Home') }}
+    
+    occupancy_away:
+      friendly_name: Occupancy Away Sensor
+      value_template: >-
+        {{ is_state('input_select.occupancy', 'Away') }}
+
+    occupancy_sleep:
+      friendly_name: Occupancy Sleep Sensor
+      value_template: >-
+        {{ is_state('input_select.occupancy', 'Sleep') }}
+    
+    occupancy_vacation:
+      friendly_name: Occupancy Vacation Sensor
+      value_template: >-
+        {{ is_state('input_select.occupancy', 'Vacation') }}

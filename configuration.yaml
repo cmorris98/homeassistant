@@ -37,24 +37,7 @@ frontend:
 tts:
   - platform: google_translate
 
-# InfluxDB
-# influxdb:
-#   host: !secret influx_host
-#   username: !secret influx_user
-#   password: !secret influx_password
-#   include:
-#     entities:
-#       - sensor.living_room_sensor_temperature
-#       - sensor.living_room_sensor_relative_humidity
-#       - sensor.living_room_sensor_luminance
-#       - binary_sensor.living_room_motion
-#       - sensor.logans_room_sensor_temperature
-#       - sensor.logans_room_sensor_relative_humidity
-#       - sensor.logans_room_sensor_luminance
-#       - binary_sensor.logans_room_motion
-#       - binary_sensor.day
-#       - binary_sensor.night
-
+influxdb: !include influxdb.yaml
 homekit: !include homekit.yaml
 group: !include groups.yaml
 automation: !include automations.yaml
@@ -64,3 +47,4 @@ binary_sensor: !include binary_sensors.yaml
 sensor: !include sensors.yaml
 timer: !include  timers.yaml
 input_boolean: !include input_booleans.yaml
+input_select: !include input_selects.yaml

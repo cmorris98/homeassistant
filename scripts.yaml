@@ -24,3 +24,54 @@ good_night_logan:
       data:
         entity_id: switch.logans_room_right_plug_switch
 
+occupancy_home:
+  alias: Occupancy Home
+  icon: mdi:home
+  description: Does stuff when you set occupancy to home
+  sequence:
+    - service: switch.turn_on
+      data:
+        entity_id: switch.logans_room_right_plug_switch
+    - service: switch.turn_on
+      data:
+        entity_id: switch.living_room_right_plug_switch
+    # - service: notify.mobile_app_craigs_iphone
+    #   data:
+    #     message: Occupancy Set To Home
+
+occupancy_away:
+  alias: Occupancy Away
+  icon: mdi:home-export-outline
+  description: Does stuff when you set occupancy to away
+  sequence:
+    - service: switch.turn_off
+      data:
+        entity_id: switch.logans_room_right_plug_switch
+    - service: switch.turn_off
+      data:
+        entity_id: switch.living_room_right_plug_switch
+
+occupancy_sleep:
+  alias: Occupancy Sleep
+  icon: mdi:sleep
+  description: Does stuff when you set occupancy to sleep
+  sequence:
+    - service: switch.turn_off
+      data:
+        entity_id: switch.logans_room_right_plug_switch
+    - service: switch.turn_off
+      data:
+        entity_id: switch.living_room_right_plug_switch
+
+occupancy_vacation:
+  alias: Occupancy Vacation
+  icon: mdi:beach
+  description: Does stuff when you set occupancy to vacation
+  sequence:
+    - service: switch.turn_off
+      data:
+        entity_id: switch.logans_room_right_plug_switch
+    - service: switch.turn_off
+      data:
+        entity_id: switch.living_room_right_plug_switch
+

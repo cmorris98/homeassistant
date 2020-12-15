@@ -1,5 +1,8 @@
 platform: template
 sensors:
+  sun_elevation:
+    value_template: '{{states.sun.sun.attributes.elevation | float}}'
+
   living_room_climate:
     friendly_name: Living Room
     device_class: temperature
@@ -78,12 +81,8 @@ sensors:
     value_template: >-
       {{states.sensor.back_yard_sensor_temperature.state}} °F  |  {{states.sensor.back_yard_sensor_relative_humidity.state}} % | {{states.sensor.back_yard_sensor_luminance.state}} %
 
-  # day:
-  #   friendly_name: Daytime Sensor
-  #   value_template: >-
-  #     {{ state_attr('sun.sun', 'elevation')|float > 0 }}
-
-  # night:
-  #   friendly_name: Nighttime Sensor
-  #   value_template: >-
-  #     {{ state_attr('sun.sun', 'elevation')|float <= 0 }}
+  logans_room_temperature_raw:
+    friendly_name: Logans Room Temerature
+    device_class: temperature
+    value_template: >-
+      {{states.sensor.logans_room_sensor_temperature.state | float}}

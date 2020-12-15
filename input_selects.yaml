@@ -1,0 +1,7 @@
+occupancy:
+  name: Occupancy
+  options:
+    - Home
+    - Away
+    - Sleep
+    - Vacation

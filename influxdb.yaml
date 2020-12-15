@@ -1,0 +1,17 @@
+host: !secret influx_host
+username: !secret influx_user
+password: !secret influx_password
+include:
+  entities:
+    - sensor.logans_room_sensor_temperature
+    - sensor.logans_room_temperature_raw
+    # - sensor.living_room_sensor_temperature
+    # - sensor.living_room_sensor_relative_humidity
+#       - sensor.living_room_sensor_luminance
+#       - binary_sensor.living_room_motion
+#       - sensor.logans_room_sensor_temperature
+#       - sensor.logans_room_sensor_relative_humidity
+#       - sensor.logans_room_sensor_luminance
+#       - binary_sensor.logans_room_motion
+#       - binary_sensor.day
+#       - binary_sensor.night

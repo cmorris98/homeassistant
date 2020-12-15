@@ -416,6 +416,14 @@ views:
           - entity: sensor.logans_room_sensor_temperature
             name: Logans Room
             show_fill: false
+          - entity: sensor.sun_elevation
+            color: orange
+            name: Sun elevation
+            show_fill: true
+            show_line: false
+            show_points: false
+            show_legend: false
+            y_axis: secondary
 
       - type: custom:mini-graph-card
         name: Humidity
@@ -443,7 +451,7 @@ views:
 
       - type: custom:mini-graph-card
         name: Sun Elevation
-        icon: mdi:lightbulb-outline
+        icon: mdi:white-balance-sunny
         points_per_hour: 2
         entities:
           - entity: sensor.sun_elevation
@@ -557,38 +565,11 @@ views:
               - entity: sensor.garage_climate
               - entity: sensor.front_yard_climate
               - entity: sensor.back_yard_climate
-          # - type: grid
-          #   cards:
-          #     - type: custom:mini-graph-card
-          #       name: Living
-          #       icon: mdi:thermometer
-          #       points_per_hour: 2
-          #       entities:
-          #         - entity: sensor.living_room_sensor_temperature
-          #     - type: custom:mini-graph-card
-          #       name: Logans
-          #       icon: mdi:thermometer
-          #       points_per_hour: 2
-          #       entities:
-          #         - entity: sensor.logans_room_sensor_temperature
-          #     - type: custom:mini-graph-card
-          #       name: Jocelyn
-          #       icon: mdi:thermometer
-          #       points_per_hour: 2
-          #       entities:
-          #         - entity: sensor.logans_room_sensor_temperature
+
       - type: vertical-stack
-        # title: Vertical Stack 3
         cards:
           - type: horizontal-stack
             cards:
-              - type: custom:mini-graph-card
-                name: Living Room
-                icon: mdi:thermometer
-                points_per_hour: 1
-                entities:
-                  - entity: sensor.living_room_sensor_temperature
-                    name: Logans Room
               - type: sensor
                 name: Living Room
                 icon: mdi:thermometer
@@ -596,9 +577,21 @@ views:
                 graph: line
                 detail: 1
               - type: sensor
-                name: Living Room
+                name: Master Bedroom
                 icon: mdi:thermometer
                 entity: sensor.living_room_sensor_temperature
+                graph: line
+                detail: 1
+              - type: sensor
+                name: Jocelyns Room
+                icon: mdi:thermometer
+                entity: sensor.living_room_sensor_temperature
+                graph: line
+                detail: 1
+              - type: sensor
+                name: Logans Room
+                icon: mdi:thermometer
+                entity: sensor.logans_room_sensor_temperature
                 graph: line
                 detail: 1
           - type: entities

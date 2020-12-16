@@ -561,30 +561,45 @@ views:
         cards:
           - type: horizontal-stack
             cards:
-              - type: sensor
-                name: Living Room
-                icon: mdi:thermometer
-                entity: sensor.living_room_sensor_temperature
-                graph: line
-                detail: 1
-              - type: sensor
-                name: Master Bedroom
-                icon: mdi:thermometer
-                entity: sensor.living_room_sensor_temperature
-                graph: line
-                detail: 1
-              - type: sensor
-                name: Jocelyns Room
-                icon: mdi:thermometer
-                entity: sensor.living_room_sensor_temperature
-                graph: line
-                detail: 1
-              - type: sensor
-                name: Logans Room
-                icon: mdi:thermometer
-                entity: sensor.logans_room_sensor_temperature
-                graph: line
-                detail: 1
+              - type: picture-glance
+                title: Front Door
+                image: 'https://demo.home-assistant.io/stub_config/kitchen.png'
+                entities:
+                  - entity: binary_sensor.front_door_motion
+                camera_image: camera.front_door
+              - type: picture-glance
+                title: Garage
+                image: 'https://demo.home-assistant.io/stub_config/kitchen.png'
+                entities:
+                  - entity: binary_sensor.garage_motion
+                camera_image: camera.garage
+
+          # - type: horizontal-stack
+          #   cards:
+          #     - type: sensor
+          #       name: Living Room
+          #       icon: mdi:thermometer
+          #       entity: sensor.living_room_sensor_temperature
+          #       graph: line
+          #       detail: 1
+          #     - type: sensor
+          #       name: Master Bedroom
+          #       icon: mdi:thermometer
+          #       entity: sensor.living_room_sensor_temperature
+          #       graph: line
+          #       detail: 1
+          #     - type: sensor
+          #       name: Jocelyns Room
+          #       icon: mdi:thermometer
+          #       entity: sensor.living_room_sensor_temperature
+          #       graph: line
+          #       detail: 1
+          #     - type: sensor
+          #       name: Logans Room
+          #       icon: mdi:thermometer
+          #       entity: sensor.logans_room_sensor_temperature
+          #       graph: line
+          #       detail: 1
           - type: entities
             title: Lights
             icon: mdi:lightbulb

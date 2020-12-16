@@ -20,6 +20,9 @@ logger:
 # https://www.home-assistant.io/integrations/default_config
 default_config:
 
+ffmpeg:
+  ffmpeg_bin: /usr/local/bin/ffmpeg
+
 # Lovelace UI elements
 lovelace:
   mode: yaml

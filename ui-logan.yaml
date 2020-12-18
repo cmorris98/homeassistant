@@ -1,0 +1,90 @@
+title: Logans Room
+views:
+  - title: Dashboard
+    path: dashboard
+    icon: mdi:view-dashboard
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: button
+                name: Sleep
+                icon: mdi:sleep
+                tap_action:
+                  action: toggle
+                entity: input_boolean.logan_sleep
+                show_state: true
+          - type: custom:weather-card
+            entity: weather.openweathermap
+      
+      - type: vertical-stack
+        cards:
+          - type: entities
+            title: Plugs
+            icon: mdi:power-plug
+            state_color: true
+            entities: 
+              - switch.logans_room_sound_machine_switch
+              - switch.logans_room_right_plug_switch
+
+      - type: vertical-stack
+        cards:
+          - type: custom:mini-graph-card
+            name: Temperature
+            icon: mdi:thermometer
+            points_per_hour: 2
+            entities:
+              - entity: sensor.logans_room_sensor_temperature
+                name: Logans Room
+                show_fill: false
+                show_points: false
+                show_legend: false
+              - entity: sensor.sun_elevation
+                color: orange
+                name: Sun elevation
+                show_fill: true
+                show_line: false
+                show_points: false
+                show_legend: false
+                y_axis: secondary
+
+          - type: custom:mini-graph-card
+            name: Humidity
+            icon: mdi:water-percent
+            points_per_hour: 2
+            entities:
+              - entity: sensor.logans_room_sensor_relative_humidity
+                name: Logans Room
+                show_fill: false
+                show_points: false
+                show_legend: false
+              - entity: sensor.sun_elevation
+                color: orange
+                name: Sun elevation
+                show_fill: true
+                show_line: false
+                show_points: false
+                show_legend: false
+                y_axis: secondary
+
+          - type: custom:mini-graph-card
+            name: Luminance
+            icon: mdi:lightbulb-outline
+            points_per_hour: 2
+            entities:
+              - entity: sensor.logans_room_sensor_luminance
+                name: Logans Room
+                show_fill: false
+                show_points: false
+                show_legend: false
+              - entity: sensor.sun_elevation
+                color: orange
+                name: Sun elevation
+                show_fill: true
+                show_line: false
+                show_points: false
+                show_legend: false
+                y_axis: secondary
+

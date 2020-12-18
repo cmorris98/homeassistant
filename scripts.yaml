@@ -3,6 +3,9 @@ good_morning_logan:
   icon: mdi:weather-sunset-up
   description: Turns off sound machine and turns lights on
   sequence:
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.logan_sleep
     - service: switch.turn_off
       data:
         entity_id: switch.logans_room_sound_machine_switch
@@ -17,6 +20,9 @@ good_night_logan:
   icon: mdi:weather-sunset-down
   description: Turns on the sound machine and turns lights off
   sequence:
+    - service: input_boolean.turn_on
+      data:
+        entity_id: input_boolean.logan_sleep
     - service: switch.turn_on
       data:
         entity_id: switch.logans_room_sound_machine_switch

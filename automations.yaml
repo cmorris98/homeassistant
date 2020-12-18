@@ -102,3 +102,33 @@
     data:
       entity_id: script.occupancy_vacation
   mode: single
+
+- id: logan_sleep
+  alias: Set Logan to sleep
+  description: ""
+  trigger:
+    - platform: state
+      entity_id: input_boolean.logan_sleep
+      from: "off"
+      to: "on"
+  condition: []
+  action:
+    service: script.turn_on
+    data:
+      entity_id: script.good_night_logan
+  mode: single
+
+- id: logan_awake
+  alias: Set Logan to awake
+  description: ""
+  trigger:
+    - platform: state
+      entity_id: input_boolean.logan_sleep
+      from: "on"
+      to: "off"
+  condition: []
+  action:
+    service: script.turn_on
+    data:
+      entity_id: script.good_morning_logan
+  mode: single

@@ -1,4 +1,16 @@
 living_room_occupied:
-  name: 'Living Room Occupied'
+  name: Living Room Occupied
   initial: false
   icon: mdi:walk
+
+logan_sleep:
+  name: Logan Sleeping
+  icon: mdi:sleep
+
+jocelyn_sleep:
+  name: Jocelyn Sleeping
+  icon: mdi:sleep
+
+master_bedroom_sleep:
+  name: Master bedroom sleeping
+  icon: mdi:sleep

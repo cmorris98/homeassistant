@@ -1,4 +1,5 @@
 secrets.yaml
+zones.yaml
 *.xml
 *.db
 *.db-shm

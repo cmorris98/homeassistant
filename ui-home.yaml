@@ -1,9 +1,13 @@
-title: Home2
+title: Home
 views:
   - title: Dashboard
     path: dashboard
     icon: mdi:view-dashboard
-    badges: []
+    badges:
+      - type: state-label
+        name: Craig
+        icon: mdi:alpha-c-circle
+        entity: person.craig_morris
     cards:
       - type: vertical-stack
         cards:

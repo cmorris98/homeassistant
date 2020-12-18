@@ -1,0 +1,26 @@
+# Lovelace UI elements
+mode: yaml
+resources:
+  - url: /local/community/mini-graph-card/mini-graph-card-bundle.js
+    type: module
+  - url: /local/custom-lovelace/weather-card/weather-card.js
+    type: module
+dashboards:
+  lovelace-main:
+    mode: yaml
+    filename: ui-home.yaml
+    title: 1. Home
+    icon: mdi:home
+  lovelace-logan:
+      mode: yaml
+      filename: ui-logan.yaml
+      title: 2. Logan
+      icon: mdi:bed
+  # lovelace-generated:
+  #   mode: yaml
+  #   filename: doesnt_exist.yaml
+  #   title: Generated
+  #   icon: mdi:tools
+  #   show_in_sidebar: true
+  #   require_admin: true
+  

@@ -1,5 +1,158 @@
 title: Home2
 views:
+  - title: Dashboard
+    path: dashboard
+    icon: mdi:view-dashboard
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: custom:weather-card
+            entity: weather.openweathermap
+
+          - type: horizontal-stack
+            cards:
+              - type: button
+                name: Home
+                icon: mdi:home
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  service_data:
+                      entity_id: input_select.occupancy
+                      option: Home
+                entity: binary_sensor.occupancy_home
+                show_state: true
+              - type: button
+                name: Away
+                icon: mdi:home-export-outline
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  service_data:
+                      entity_id: input_select.occupancy
+                      option: Away
+                entity: binary_sensor.occupancy_away
+                show_state: true
+              - type: button
+                name: Sleep
+                icon: mdi:sleep
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  service_data:
+                      entity_id: input_select.occupancy
+                      option: Sleep
+                entity: binary_sensor.occupancy_sleep
+                show_state: true
+              - type: button
+                name: Vacation
+                icon: mdi:beach
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  service_data:
+                      entity_id: input_select.occupancy
+                      option: Vacation
+                entity: binary_sensor.occupancy_vacation
+                show_state: true
+          - type: horizontal-stack
+            cards:
+              - type: button
+                name: Garage Door 1
+                icon: mdi:garage-variant
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  service_data:
+                      entity_id: input_select.occupancy
+                      option: Vacation
+                entity: binary_sensor.occupancy_vacation
+                show_state: true
+              - type: button
+                name: Garage Door 2
+                icon: mdi:garage
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  service_data:
+                      entity_id: input_select.occupancy
+                      option: Vacation
+                entity: binary_sensor.occupancy_vacation
+                show_state: true
+      - type: vertical-stack
+        # title: Vertical Stack 2
+        cards:
+          - type: entities
+            entities:
+              - entity: sensor.living_room_climate
+              - entity: sensor.kitchen_climate
+              - entity: sensor.pantry_climate
+              - entity: sensor.laundry_room_climate
+              - entity: sensor.mud_room_climate
+              - entity: sensor.master_bedroom_climate
+              - entity: sensor.master_bathroom_climate
+              - entity: sensor.jocelyns_room_climate
+              - entity: sensor.logans_room_climate
+              - entity: sensor.bathroom_climate
+              - entity: sensor.garage_climate
+              - entity: sensor.front_yard_climate
+              - entity: sensor.back_yard_climate
+
+      - type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: picture-glance
+                title: Front Door
+                image: 'https://demo.home-assistant.io/stub_config/kitchen.png'
+                entities:
+                  - entity: binary_sensor.front_door_motion
+                camera_image: camera.front_door
+              - type: picture-glance
+                title: Garage
+                image: 'https://demo.home-assistant.io/stub_config/kitchen.png'
+                entities:
+                  - entity: binary_sensor.garage_motion
+                camera_image: camera.garage
+
+          # - type: horizontal-stack
+          #   cards:
+          #     - type: sensor
+          #       name: Living Room
+          #       icon: mdi:thermometer
+          #       entity: sensor.living_room_sensor_temperature
+          #       graph: line
+          #       detail: 1
+          #     - type: sensor
+          #       name: Master Bedroom
+          #       icon: mdi:thermometer
+          #       entity: sensor.living_room_sensor_temperature
+          #       graph: line
+          #       detail: 1
+          #     - type: sensor
+          #       name: Jocelyns Room
+          #       icon: mdi:thermometer
+          #       entity: sensor.living_room_sensor_temperature
+          #       graph: line
+          #       detail: 1
+          #     - type: sensor
+          #       name: Logans Room
+          #       icon: mdi:thermometer
+          #       entity: sensor.logans_room_sensor_temperature
+          #       graph: line
+          #       detail: 1
+          - type: entities
+            title: Lights
+            icon: mdi:lightbulb
+            state_color: true
+            entities: 
+              - switch.living_room_christmas_tree_switch
+              - switch.living_room_right_plug_switch
+              - switch.logans_room_sound_machine_switch
+              - switch.logans_room_right_plug_switch
+          
+              
   - title: Main Floor
     path: main-floor
     panel: false
@@ -436,6 +589,14 @@ views:
           - entity: sensor.logans_room_sensor_relative_humidity
             name: Logans Room
             show_fill: false
+          - entity: sensor.sun_elevation
+            color: orange
+            name: Sun elevation
+            show_fill: true
+            show_line: false
+            show_points: false
+            show_legend: false
+            y_axis: secondary
 
       - type: custom:mini-graph-card
         name: Luminance
@@ -448,6 +609,14 @@ views:
           - entity: sensor.logans_room_sensor_luminance
             name: Logans Room
             show_fill: false
+          - entity: sensor.sun_elevation
+            color: orange
+            name: Sun elevation
+            show_fill: true
+            show_line: false
+            show_points: false
+            show_legend: false
+            y_axis: secondary
 
       - type: custom:mini-graph-card
         name: Sun Elevation
@@ -457,156 +626,3 @@ views:
           - entity: sensor.sun_elevation
             color: orange
             name: Sun
-
-  - title: Dashboard
-    path: dashboard
-    icon: mdi:view-dashboard
-    badges: []
-    cards:
-      - type: vertical-stack
-        cards:
-          - type: custom:weather-card
-            entity: weather.openweathermap
-
-          - type: horizontal-stack
-            cards:
-              - type: button
-                name: Home
-                icon: mdi:home
-                tap_action:
-                  action: call-service
-                  service: input_select.select_option
-                  service_data:
-                      entity_id: input_select.occupancy
-                      option: Home
-                entity: binary_sensor.occupancy_home
-                show_state: true
-              - type: button
-                name: Away
-                icon: mdi:home-export-outline
-                tap_action:
-                  action: call-service
-                  service: input_select.select_option
-                  service_data:
-                      entity_id: input_select.occupancy
-                      option: Away
-                entity: binary_sensor.occupancy_away
-                show_state: true
-              - type: button
-                name: Sleep
-                icon: mdi:sleep
-                tap_action:
-                  action: call-service
-                  service: input_select.select_option
-                  service_data:
-                      entity_id: input_select.occupancy
-                      option: Sleep
-                entity: binary_sensor.occupancy_sleep
-                show_state: true
-              - type: button
-                name: Vacation
-                icon: mdi:beach
-                tap_action:
-                  action: call-service
-                  service: input_select.select_option
-                  service_data:
-                      entity_id: input_select.occupancy
-                      option: Vacation
-                entity: binary_sensor.occupancy_vacation
-                show_state: true
-          - type: horizontal-stack
-            cards:
-              - type: button
-                name: Garage Door 1
-                icon: mdi:garage-variant
-                tap_action:
-                  action: call-service
-                  service: input_select.select_option
-                  service_data:
-                      entity_id: input_select.occupancy
-                      option: Vacation
-                entity: binary_sensor.occupancy_vacation
-                show_state: true
-              - type: button
-                name: Garage Door 2
-                icon: mdi:garage
-                tap_action:
-                  action: call-service
-                  service: input_select.select_option
-                  service_data:
-                      entity_id: input_select.occupancy
-                      option: Vacation
-                entity: binary_sensor.occupancy_vacation
-                show_state: true
-      - type: vertical-stack
-        # title: Vertical Stack 2
-        cards:
-          - type: entities
-            entities:
-              - entity: sensor.living_room_climate
-              - entity: sensor.kitchen_climate
-              - entity: sensor.pantry_climate
-              - entity: sensor.laundry_room_climate
-              - entity: sensor.mud_room_climate
-              - entity: sensor.master_bedroom_climate
-              - entity: sensor.master_bathroom_climate
-              - entity: sensor.jocelyns_room_climate
-              - entity: sensor.logans_room_climate
-              - entity: sensor.bathroom_climate
-              - entity: sensor.garage_climate
-              - entity: sensor.front_yard_climate
-              - entity: sensor.back_yard_climate
-
-      - type: vertical-stack
-        cards:
-          - type: horizontal-stack
-            cards:
-              - type: picture-glance
-                title: Front Door
-                image: 'https://demo.home-assistant.io/stub_config/kitchen.png'
-                entities:
-                  - entity: binary_sensor.front_door_motion
-                camera_image: camera.front_door
-              - type: picture-glance
-                title: Garage
-                image: 'https://demo.home-assistant.io/stub_config/kitchen.png'
-                entities:
-                  - entity: binary_sensor.garage_motion
-                camera_image: camera.garage
-
-          # - type: horizontal-stack
-          #   cards:
-          #     - type: sensor
-          #       name: Living Room
-          #       icon: mdi:thermometer
-          #       entity: sensor.living_room_sensor_temperature
-          #       graph: line
-          #       detail: 1
-          #     - type: sensor
-          #       name: Master Bedroom
-          #       icon: mdi:thermometer
-          #       entity: sensor.living_room_sensor_temperature
-          #       graph: line
-          #       detail: 1
-          #     - type: sensor
-          #       name: Jocelyns Room
-          #       icon: mdi:thermometer
-          #       entity: sensor.living_room_sensor_temperature
-          #       graph: line
-          #       detail: 1
-          #     - type: sensor
-          #       name: Logans Room
-          #       icon: mdi:thermometer
-          #       entity: sensor.logans_room_sensor_temperature
-          #       graph: line
-          #       detail: 1
-          - type: entities
-            title: Lights
-            icon: mdi:lightbulb
-            state_color: true
-            entities: 
-              - switch.living_room_christmas_tree_switch
-              - switch.living_room_right_plug_switch
-              - switch.logans_room_sound_machine_switch
-              - switch.logans_room_right_plug_switch
-          

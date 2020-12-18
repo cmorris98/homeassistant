@@ -42,6 +42,7 @@ tts:
 
 influxdb: !include influxdb.yaml
 homekit: !include homekit.yaml
+cloud: !include cloud.yaml
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml

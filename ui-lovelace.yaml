@@ -98,7 +98,7 @@ views:
               transform: 'translate(0%, 0%)'
           - type: state-icon
             icon: 'mdi:pine-tree'
-            entity: switch.living_room_left_plug_switch
+            entity: switch.living_room_christmas_tree_switch
             tap_action:
               action: toggle
             style:
@@ -287,7 +287,7 @@ views:
               transform: 'translate(0%, 0%)'
           - type: state-icon
             icon: 'mdi:spotify'
-            entity: switch.logans_room_left_plug_switch
+            entity: switch.logans_room_sound_machine_switch
             tap_action:
               action: toggle
             style:
@@ -605,8 +605,8 @@ views:
             icon: mdi:lightbulb
             state_color: true
             entities: 
-              - switch.living_room_left_plug_switch
+              - switch.living_room_christmas_tree_switch
               - switch.living_room_right_plug_switch
-              - switch.logans_room_left_plug_switch
+              - switch.logans_room_sound_machine_switch
               - switch.logans_room_right_plug_switch
           

@@ -5,7 +5,7 @@ good_morning_logan:
   sequence:
     - service: switch.turn_off
       data:
-        entity_id: switch.logans_room_left_plug_switch
+        entity_id: switch.logans_room_sound_machine_switch
     - delay:
         seconds: 30
     - service: switch.turn_on
@@ -19,7 +19,7 @@ good_night_logan:
   sequence:
     - service: switch.turn_on
       data:
-        entity_id: switch.logans_room_left_plug_switch
+        entity_id: switch.logans_room_sound_machine_switch
     - service: switch.turn_off
       data:
         entity_id: switch.logans_room_right_plug_switch
@@ -29,46 +29,80 @@ occupancy_home:
   icon: mdi:home
   description: Does stuff when you set occupancy to home
   sequence:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.occupancy
+        option: Home
     - service: switch.turn_on
       data:
         entity_id: switch.living_room_right_plug_switch
     - service: switch.turn_on
       data:
-        entity_id: switch.living_room_left_plug_switch
+        entity_id: switch.living_room_christmas_tree_switch
 
 occupancy_away:
   alias: Occupancy Away
   icon: mdi:home-export-outline
   description: Does stuff when you set occupancy to away
   sequence:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.occupancy
+        option: Away
     - service: switch.turn_off
       data:
         entity_id: switch.living_room_right_plug_switch
     - service: switch.turn_off
       data:
-        entity_id: switch.living_room_left_plug_switch
+        entity_id: switch.living_room_christmas_tree_switch
 
 occupancy_sleep:
   alias: Occupancy Sleep
   icon: mdi:sleep
   description: Does stuff when you set occupancy to sleep
   sequence:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.occupancy
+        option: Sleep
     - service: switch.turn_off
       data:
         entity_id: switch.living_room_right_plug_switch
     - service: switch.turn_off
       data:
-        entity_id: switch.living_room_left_plug_switch
+        entity_id: switch.living_room_christmas_tree_switch
 
 occupancy_vacation:
   alias: Occupancy Vacation
   icon: mdi:beach
   description: Does stuff when you set occupancy to vacation
   sequence:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.occupancy
+        option: Vacation
     - service: switch.turn_off
       data:
         entity_id: switch.living_room_right_plug_switch
     - service: switch.turn_off
       data:
-        entity_id: switch.living_room_left_plug_switch
+        entity_id: switch.living_room_christmas_tree_switch
+
+turn_on_christmas:
+  alias: Turn on Christmas
+  icon: mdi:pine-tree
+  description: Turns on all the Christmas decorations
+  sequence:
+    - service: switch.turn_on
+      data:
+        entity_id: switch.living_room_christmas_tree_switch
+
+turn_off_christmas:
+  alias: Turn off Christmas
+  icon: mdi:pine-tree
+  description: Turns off all the Christmas decorations
+  sequence:
+    - service: switch.turn_off
+      data:
+        entity_id: switch.living_room_christmas_tree_switch
 

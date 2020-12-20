@@ -86,3 +86,9 @@ sensors:
     device_class: temperature
     value_template: >-
       {{states.sensor.logans_room_sensor_temperature.state | float}}
+
+  master_bathroom_humidity_delta:
+    friendly_name: Master Bathroom Humidity Delta
+    value_template: "{{ (states.sensor.logans_room_sensor_relative_humidity.state | float ) - (states.sensor.living_room_sensor_relative_humidity.state | float)}}"
+    device_class: humidity
+    unit_of_measurement: "%"

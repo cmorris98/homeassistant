@@ -24,36 +24,62 @@
 - id: master_bathroom_high_humidity
   alias: Master Bathroom High Humidity
   trigger:
-    - above: 50
-      entity_id: sensor.logans_room_sensor_relative_humidity
-      platform: numeric_state
+  - above: 5
+    entity_id: sensor.master_bathroom_humidity_delta
+    platform: numeric_state
   condition: []
   action:
     service: notify.mobile_app_craigs_iphone
     data:
-      message: Master bathroom high humidity
+      message: Master bathroom high delta humidity
   mode: single
 
 - id: master_bathroom_low_humidity
   alias: Master Bathroom Low Humidity
   trigger:
-    - below: 50
-      entity_id: sensor.logans_room_sensor_relative_humidity
-      platform: numeric_state
+  - below: 5
+    entity_id: sensor.master_bathroom_humidity_delta
+    platform: numeric_state
   condition: []
   action:
     service: notify.mobile_app_craigs_iphone
     data:
-      message: Master bathroom low humidity
+      message: Master bathroom low delta humidity
   mode: single
 
+- id: master_bathroom_humidity_rising
+  alias: Master Bathroom Humidity Rising
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.master_bathroom_humidity_rising
+    to: 'on'
+  condition: []
+  action:
+    service: notify.mobile_app_craigs_iphone
+    data:
+      message: Master bathroom humidity rising
+  mode: single
+- id: master_bathroom_humidity_falling
+  alias: Master Bathroom Humidity Falling
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.master_bathroom_humidity_falling
+    to: 'on'
+  condition: []
+  action:
+    service: notify.mobile_app_craigs_iphone
+    data:
+      message: Master bathroom humidity falling
+  mode: single
 - id: occupancy_home
   alias: Set Occupancy To Home
-  description: ""
+  description: ''
   trigger:
-    - platform: state
-      entity_id: input_select.occupancy
-      to: Home
+  - platform: state
+    entity_id: input_select.occupancy
+    to: Home
   condition: []
   action:
     service: script.turn_on
@@ -63,11 +89,11 @@
 
 - id: occupancy_away
   alias: Set Occupancy To Away
-  description: ""
+  description: ''
   trigger:
-    - platform: state
-      entity_id: input_select.occupancy
-      to: Away
+  - platform: state
+    entity_id: input_select.occupancy
+    to: Away
   condition: []
   action:
     service: script.turn_on
@@ -77,11 +103,11 @@
 
 - id: occupancy_sleep
   alias: Set Occupancy To Sleep
-  description: ""
+  description: ''
   trigger:
-    - platform: state
-      entity_id: input_select.occupancy
-      to: Sleep
+  - platform: state
+    entity_id: input_select.occupancy
+    to: Sleep
   condition: []
   action:
     service: script.turn_on
@@ -91,11 +117,11 @@
 
 - id: occupancy_vacation
   alias: Set Occupancy To Vacation
-  description: ""
+  description: ''
   trigger:
-    - platform: state
-      entity_id: input_select.occupancy
-      to: Vacation
+  - platform: state
+    entity_id: input_select.occupancy
+    to: Vacation
   condition: []
   action:
     service: script.turn_on
@@ -105,12 +131,12 @@
 
 - id: logan_sleep
   alias: Set Logan to sleep
-  description: ""
+  description: ''
   trigger:
-    - platform: state
-      entity_id: input_boolean.logan_sleep
-      from: "off"
-      to: "on"
+  - platform: state
+    entity_id: input_boolean.logan_sleep
+    from: 'off'
+    to: 'on'
   condition: []
   action:
     service: script.turn_on
@@ -120,15 +146,28 @@
 
 - id: logan_awake
   alias: Set Logan to awake
-  description: ""
+  description: ''
   trigger:
-    - platform: state
-      entity_id: input_boolean.logan_sleep
-      from: "on"
-      to: "off"
+  - platform: state
+    entity_id: input_boolean.logan_sleep
+    from: 'on'
+    to: 'off'
   condition: []
   action:
     service: script.turn_on
     data:
       entity_id: script.good_morning_logan
+  mode: single
+
+- id: fron_door_tag_scan
+  alias: Front Door Tag Scan
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: front_door_tag
+  condition: []
+  action:
+    service: switch.toggle
+    data:
+      entity_id: switch.living_room_right_plug_switch
   mode: single

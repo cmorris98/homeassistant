@@ -31,3 +31,23 @@
       friendly_name: Occupancy Vacation Sensor
       value_template: >-
         {{ is_state('input_select.occupancy', 'Vacation') }}
+
+- platform: trend
+  sensors:
+    # Bathroom has seen humidity risen more than 2% in the last 10 minutes (5 / (10*60))
+    master_bathroom_humidity_rising:
+      friendly_name: Master Bathroom Humidity Rising
+      entity_id: sensor.logans_room_sensor_relative_humidity
+      sample_duration: 600
+      max_samples: 3
+      min_gradient: 0.008
+      device_class: moisture
+    
+    # Bathroom has seen humidity fall more than 5% in the last 5 minutes (5 / (5*60))
+    master_bathroom_humidity_falling:
+      friendly_name: Master Bathroom Humidity Falling
+      entity_id: sensor.logans_room_sensor_relative_humidity
+      sample_duration: 300
+      max_samples: 2
+      min_gradient: -0.02
+      device_class: moisture

@@ -9,11 +9,14 @@ good_morning_logan:
     - service: switch.turn_off
       data:
         entity_id: switch.logans_room_sound_machine_switch
-    - delay:
-        seconds: 30
     - service: switch.turn_on
       data:
         entity_id: switch.logans_room_right_plug_switch
+    - service: light.turn_on
+      data:
+        entity_id: light.logans_light_switch_level
+        transition: 30
+        brightness_pct: 65
 
 good_night_logan:
   alias: Good Night Logan
@@ -29,6 +32,10 @@ good_night_logan:
     - service: switch.turn_off
       data:
         entity_id: switch.logans_room_right_plug_switch
+    - service: light.turn_off
+      data:
+        entity_id: light.logans_light_switch_level
+        transition: 10
 
 occupancy_home:
   alias: Occupancy Home

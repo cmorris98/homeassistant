@@ -21,6 +21,8 @@ views:
       
       - type: vertical-stack
         cards:
+          - type: light
+            entity: light.logans_light_switch_level
           - type: entities
             title: Plugs
             icon: mdi:power-plug

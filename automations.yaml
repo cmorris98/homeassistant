@@ -171,3 +171,16 @@
     data:
       entity_id: switch.living_room_right_plug_switch
   mode: single
+
+- id: christmas_tag_scan
+  alias: Christmas Tag Scan
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: christmas
+  condition: []
+  action:
+    service: switch.toggle
+    data:
+      entity_id: switch.living_room_christmas_tree_switch
+  mode: single

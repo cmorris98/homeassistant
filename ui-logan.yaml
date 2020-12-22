@@ -3,7 +3,17 @@ views:
   - title: Dashboard
     path: dashboard
     icon: mdi:view-dashboard
-    badges: []
+    # badges:
+    #   - type: state-label
+    #     entity: binary_sensor.akasato8387
+    #   - type: state-label
+    #     entity: binary_sensor.bb8sgr8
+    #   - type: state-label
+    #     entity: binary_sensor.virtualworids
+    #   - type: state-label
+    #     entity: binary_sensor.operatedflyer29
+    #   - type: state-label
+    #     entity: binary_sensor.jst_planets
     cards:
       - type: vertical-stack
         cards:
@@ -30,6 +40,16 @@ views:
             entities: 
               - switch.logans_room_sound_machine_switch
               - switch.logans_room_right_plug_switch
+          - type: entities
+            title: XBox Friends
+            icon: mdi:microsoft-xbox
+            state_color: true
+            entities: 
+              - binary_sensor.akasato8387
+              - binary_sensor.bb8sgr8
+              - binary_sensor.virtualworids
+              - binary_sensor.operatedflyer29
+              - binary_sensor.jst_planets
 
       - type: vertical-stack
         cards:
@@ -39,6 +59,25 @@ views:
             points_per_hour: 2
             entities:
               - entity: sensor.logans_room_sensor_temperature
+                name: Logans Room
+                show_fill: false
+                show_points: false
+                show_legend: false
+              - entity: sensor.sun_elevation
+                color: orange
+                name: Sun elevation
+                show_fill: true
+                show_line: false
+                show_points: false
+                show_legend: false
+                y_axis: secondary
+
+          - type: custom:mini-graph-card
+            name: Temperature Delta
+            icon: mdi:thermometer
+            points_per_hour: 2
+            entities:
+              - entity: sensor.logans_room_temperature_delta
                 name: Logans Room
                 show_fill: false
                 show_points: false

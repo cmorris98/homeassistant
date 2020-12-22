@@ -155,6 +155,7 @@ views:
               - switch.living_room_right_plug_switch
               - switch.logans_room_sound_machine_switch
               - switch.logans_room_right_plug_switch
+              - light.logans_light_switch_level
           
               
   - title: Main Floor
@@ -435,7 +436,7 @@ views:
               transform: 'translate(0%, 0%)'
           - type: state-icon
             icon: 'mdi:lightbulb'
-            entity: switch.logans_room_right_plug_switch
+            entity: light.logans_light_switch_level
             tap_action:
               action: toggle
             style:

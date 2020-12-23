@@ -45,3 +45,4 @@ sensor: !include sensors.yaml
 timer: !include  timers.yaml
 input_boolean: !include input_booleans.yaml
 input_select: !include input_selects.yaml
+switch: !include switches.yaml

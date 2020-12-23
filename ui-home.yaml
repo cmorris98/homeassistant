@@ -631,3 +631,41 @@ views:
           - entity: sensor.sun_elevation
             color: orange
             name: Sun
+
+  - title: Batteries
+    path: batteries
+    icon: mdi:battery
+    badges: []
+    cards:
+      - type: gauge
+        entity: sensor.front_door_battery
+        min: 0
+        max: 100
+        severity:
+          green: 80
+          yellow: 40
+          red: 0
+      - type: gauge
+        entity: sensor.garage_battery
+        min: 0
+        max: 100
+        severity:
+          green: 80
+          yellow: 40
+          red: 0
+      - type: gauge
+        entity: sensor.living_room_sensor_battery_level
+        min: 0
+        max: 100
+        severity:
+          green: 80
+          yellow: 40
+          red: 0
+      - type: gauge
+        entity: sensor.logans_room_sensor_battery_level
+        min: 0
+        max: 100
+        severity:
+          green: 80
+          yellow: 40
+          red: 0

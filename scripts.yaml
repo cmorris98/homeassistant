@@ -36,6 +36,9 @@ good_night_logan:
       data:
         entity_id: light.logans_light_switch_level
         transition: 10
+    - service: switch.turn_off
+      data:
+        entity_id: switch.logans_xbox
 
 occupancy_home:
   alias: Occupancy Home
@@ -119,3 +122,38 @@ turn_off_christmas:
       data:
         entity_id: switch.living_room_christmas_tree_switch
 
+# turn_on_logans_xbox:
+#   alias: Turn on Logans Xbox
+#   icon: mdi:microsoft-xbox
+#   description: Turns on Logans Xbox via harmony hub
+#   sequence:
+#     - service: remote.turn_on
+#       entity_id: remote.harmony_hub
+#       data:
+#         activity: "Xbox"
+
+# turn_off_logans_tv:
+#   alias: Turn Off Logans TV
+#   icon: mdi:remote-tv-off
+#   description: Turns on Logans Xbox via harmony hub
+#   sequence:
+#     - service: remote.turn_off
+#       entity_id: remote.harmony_hub
+
+# logans_xbox:
+#   alias: Turn on Logans Xbox
+#   icon: mdi:microsoft-xbox
+#   # value_template: "{% if is_state('remote.harmony_hub', 'Xbox') %}on{% else %}off{% endif %}"
+#   turn_on:
+#     service: script.turn_on
+#     entity_id: script.bord_on
+#   turn_off:
+#     service: script.turn_on
+#     entity_id: script.bord_off
+
+#   description: Turns on Logans Xbox via harmony hub
+#   sequence:
+#     - service: remote.turn_on
+#       entity_id: remote.harmony_hub
+#       data:
+#         activity: "Xbox"

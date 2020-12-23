@@ -81,26 +81,22 @@ sensors:
     value_template: >-
       {{states.sensor.back_yard_sensor_temperature.state}} °F  |  {{states.sensor.back_yard_sensor_relative_humidity.state}} % | {{states.sensor.back_yard_sensor_luminance.state}} %
 
-  logans_room_temperature_raw:
-    friendly_name: Logans Room Temerature
-    device_class: temperature
-    value_template: >-
-      {{states.sensor.logans_room_sensor_temperature.state | float}}
-
   master_bathroom_humidity_delta:
     friendly_name: Master Bathroom Humidity Delta
-    value_template: "{{ (states.sensor.logans_room_sensor_relative_humidity.state | float ) - (states.sensor.living_room_sensor_relative_humidity.state | float)}}"
+    value_template: '{{ (states.sensor.logans_room_sensor_relative_humidity.state | float ) - (states.sensor.living_room_sensor_relative_humidity.state | float)}}'
     device_class: humidity
-    # unit_of_measurement: "%"
 
   logans_room_temperature_delta:
     friendly_name: Logans Room Temperature Delta
-    value_template: "{{ (states.sensor.logans_room_sensor_temperature.state | float ) - (states.sensor.living_room_sensor_temperature.state | float)}}"
+    value_template: '{{ (states.sensor.logans_room_sensor_temperature.state | float ) - (states.sensor.living_room_sensor_temperature.state | float)}}'
     device_class: temperature
-    # unit_of_measurement: "°F"
 
   logans_room_humidity_delta:
     friendly_name: Logans Room Humidity Delta
-    value_template: "{{ (states.sensor.logans_room_sensor_relative_humidity.state | float ) - (states.sensor.living_room_sensor_relative_humidity.state | float)}}"
+    value_template: '{{ (states.sensor.logans_room_sensor_relative_humidity.state | float ) - (states.sensor.living_room_sensor_relative_humidity.state | float)}}'
     device_class: humidity
-    # unit_of_measurement: "%"
+
+  logans_tv:
+    friendly_name: Current state Of Logans TV
+    value_template: '{{ state_attr("remote.harmony_hub", "current_activity") }}'
+    

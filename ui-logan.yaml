@@ -3,17 +3,6 @@ views:
   - title: Dashboard
     path: dashboard
     icon: mdi:view-dashboard
-    # badges:
-    #   - type: state-label
-    #     entity: binary_sensor.akasato8387
-    #   - type: state-label
-    #     entity: binary_sensor.bb8sgr8
-    #   - type: state-label
-    #     entity: binary_sensor.virtualworids
-    #   - type: state-label
-    #     entity: binary_sensor.operatedflyer29
-    #   - type: state-label
-    #     entity: binary_sensor.jst_planets
     cards:
       - type: vertical-stack
         cards:
@@ -25,6 +14,13 @@ views:
                 tap_action:
                   action: toggle
                 entity: input_boolean.logan_sleep
+                show_state: true
+              - type: button
+                name: Xbox
+                icon: mdi:microsoft-xbox
+                tap_action:
+                  action: toggle
+                entity: switch.logans_xbox
                 show_state: true
           - type: custom:weather-card
             entity: weather.openweathermap
@@ -41,7 +37,7 @@ views:
               - switch.logans_room_sound_machine_switch
               - switch.logans_room_right_plug_switch
           - type: entities
-            title: XBox Friends
+            title: Xbox Friends
             icon: mdi:microsoft-xbox
             state_color: true
             entities: 

@@ -20,46 +20,42 @@ views:
                 name: Home
                 icon: mdi:home
                 tap_action:
-                  action: call-service
-                  service: input_select.select_option
-                  service_data:
-                      entity_id: input_select.occupancy
-                      option: Home
-                entity: binary_sensor.occupancy_home
-                show_state: true
+                  action: toggle
+                entity: switch.home
               - type: button
                 name: Away
                 icon: mdi:home-export-outline
                 tap_action:
-                  action: call-service
-                  service: input_select.select_option
-                  service_data:
-                      entity_id: input_select.occupancy
-                      option: Away
-                entity: binary_sensor.occupancy_away
-                show_state: true
+                  action: toggle
+                entity: switch.away
               - type: button
                 name: Sleep
                 icon: mdi:sleep
                 tap_action:
-                  action: call-service
-                  service: input_select.select_option
-                  service_data:
-                      entity_id: input_select.occupancy
-                      option: Sleep
-                entity: binary_sensor.occupancy_sleep
-                show_state: true
+                  action: toggle
+                entity: switch.sleep
               - type: button
                 name: Vacation
                 icon: mdi:beach
                 tap_action:
-                  action: call-service
-                  service: input_select.select_option
-                  service_data:
-                      entity_id: input_select.occupancy
-                      option: Vacation
-                entity: binary_sensor.occupancy_vacation
-                show_state: true
+                  action: toggle
+                entity: switch.vacation
+
+          - type: horizontal-stack
+            cards:
+              - type: button
+                name: Christmas
+                icon: mdi:pine-tree
+                tap_action:
+                  action: toggle
+                entity: switch.christmas
+              - type: button
+                name: Halloween
+                icon: mdi:pumpkin
+                tap_action:
+                  action: toggle
+                entity: switch.christmas
+
           - type: horizontal-stack
             cards:
               - type: button
@@ -72,7 +68,6 @@ views:
                       entity_id: input_select.occupancy
                       option: Vacation
                 entity: binary_sensor.occupancy_vacation
-                show_state: true
               - type: button
                 name: Garage Door 2
                 icon: mdi:garage
@@ -83,9 +78,8 @@ views:
                       entity_id: input_select.occupancy
                       option: Vacation
                 entity: binary_sensor.occupancy_vacation
-                show_state: true
+
       - type: vertical-stack
-        # title: Vertical Stack 2
         cards:
           - type: entities
             entities:
@@ -120,32 +114,6 @@ views:
                   - entity: binary_sensor.garage_motion
                 camera_image: camera.garage
 
-          # - type: horizontal-stack
-          #   cards:
-          #     - type: sensor
-          #       name: Living Room
-          #       icon: mdi:thermometer
-          #       entity: sensor.living_room_sensor_temperature
-          #       graph: line
-          #       detail: 1
-          #     - type: sensor
-          #       name: Master Bedroom
-          #       icon: mdi:thermometer
-          #       entity: sensor.living_room_sensor_temperature
-          #       graph: line
-          #       detail: 1
-          #     - type: sensor
-          #       name: Jocelyns Room
-          #       icon: mdi:thermometer
-          #       entity: sensor.living_room_sensor_temperature
-          #       graph: line
-          #       detail: 1
-          #     - type: sensor
-          #       name: Logans Room
-          #       icon: mdi:thermometer
-          #       entity: sensor.logans_room_sensor_temperature
-          #       graph: line
-          #       detail: 1
           - type: entities
             title: Lights
             icon: mdi:lightbulb
@@ -156,7 +124,6 @@ views:
               - switch.logans_room_sound_machine_switch
               - switch.logans_room_right_plug_switch
               - light.logans_light_switch_level
-          
               
   - title: Main Floor
     path: main-floor

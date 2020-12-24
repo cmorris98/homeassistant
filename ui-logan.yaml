@@ -13,15 +13,21 @@ views:
                 icon: mdi:sleep
                 tap_action:
                   action: toggle
-                entity: input_boolean.logan_sleep
-                show_state: true
+                entity: switch.logan_sleep
+
+              # - type: button
+              #   name: Sleep
+              #   icon: mdi:sleep
+              #   tap_action:
+              #     action: toggle
+              #   entity: input_boolean.logan_sleep
+              #   show_state: true
               - type: button
                 name: Xbox
                 icon: mdi:microsoft-xbox
                 tap_action:
                   action: toggle
                 entity: switch.logans_xbox
-                show_state: true
           - type: custom:weather-card
             entity: weather.openweathermap
       

@@ -14,3 +14,7 @@ jocelyn_sleep:
 master_bedroom_sleep:
   name: Master bedroom sleeping
   icon: mdi:sleep
+
+christmas:
+  name: Christmas
+  icon: mdi:pine-tree

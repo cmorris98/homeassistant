@@ -8,6 +8,7 @@ filter:
     - switch.logans_room_usb_plug_switch
     - binary_sensor.logans_room_motion
     - switch.logans_xbox
+    - switch.logan_sleep
 
     # Living Room
     - sensor.living_room_sensor_temperature
@@ -16,9 +17,10 @@ filter:
     - switch.living_room_right_plug_switch
     - switch.living_room_usb_plub_switch
     - binary_sensor.living_room_motion
-  
-  include_domains:
-    - script
+    
+    # Other
+    - switch.christmas
+
 
 entity_config:
   sensor.logans_room_sensor_temperature:
@@ -33,12 +35,10 @@ entity_config:
     name: Logans Room USB
   binary_sensor.logans_room_motion:
     name: Logans Room Motion
-  script.good_morning_logan:
-    name: Logans Room Good Morning
-  script.good_night_logan:
-    name: Logans Room Good Night
   switch.logans_xbox:
     name: Logans Xbox
+  switch.logan_sleep:
+    name: Logan Sleep
 
   sensor.living_room_sensor_temperature:
     name: Living Room Temperature
@@ -52,3 +52,6 @@ entity_config:
     name: Living Room USB
   binary_sensor.living_room_motion:
     name: Living Room Motion
+
+  switch.christmas:
+    name: Christmas

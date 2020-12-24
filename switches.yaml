@@ -18,10 +18,10 @@
       value_template: "{{ is_state('input_boolean.logan_sleep', 'on') }}"
       turn_on:
         service: script.turn_on
-        entity_id: script.good_morning_logan
+        entity_id: script.good_night_logan
       turn_off:
         service: script.turn_on
-        entity_id: script.good_night_logan 
+        entity_id: script.good_morning_logan 
 
     christmas:
       friendly_name: Christmas

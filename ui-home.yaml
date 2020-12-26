@@ -62,22 +62,14 @@ views:
                 name: Garage Door 1
                 icon: mdi:garage-variant
                 tap_action:
-                  action: call-service
-                  service: input_select.select_option
-                  service_data:
-                      entity_id: input_select.occupancy
-                      option: Vacation
-                entity: binary_sensor.occupancy_vacation
+                  action: toggle
+                entity: switch.christmas
               - type: button
                 name: Garage Door 2
                 icon: mdi:garage
                 tap_action:
-                  action: call-service
-                  service: input_select.select_option
-                  service_data:
-                      entity_id: input_select.occupancy
-                      option: Vacation
-                entity: binary_sensor.occupancy_vacation
+                  action: toggle
+                entity: switch.christmas
 
       - type: vertical-stack
         cards:
@@ -119,12 +111,18 @@ views:
             icon: mdi:lightbulb
             state_color: true
             entities: 
+              - light.logans_light_switch_level
+              
+          - type: entities
+            title: Plugs
+            icon: mdi:power-plug
+            state_color: true
+            entities: 
               - switch.living_room_christmas_tree_switch
               - switch.living_room_right_plug_switch
               - switch.logans_room_sound_machine_switch
               - switch.logans_room_right_plug_switch
-              - light.logans_light_switch_level
-              
+
   - title: Main Floor
     path: main-floor
     panel: false
@@ -250,6 +248,8 @@ views:
               top: 37%
               left: 18%
               transform: 'translate(0%, 0%) rotate(180deg)'
+              outline-color: black
+              color: black
           - type: state-icon
             icon: 'mdi:video'
             entity: camera.robi_cleaning_map
@@ -299,10 +299,7 @@ views:
               left: 37%
               transform: 'translate(0%, 0)'
           - type: state-icon
-            icon: 'mdi:walk'
-            entity: switch.living_room_right_plug_switch
-            tap_action:
-              action: toggle
+            entity: binary_sensor.living_room_motion
             style:
               bottom: 14%
               left: 45%
@@ -328,10 +325,7 @@ views:
               left: 26%
               transform: 'translate(0%, 0)'
           - type: state-icon
-            icon: 'mdi:walk'
-            entity: switch.living_room_right_plug_switch
-            tap_action:
-              action: toggle
+            entity: binary_sensor.living_room_motion
             style:
               bottom: 31%
               left: 33%
@@ -355,10 +349,7 @@ views:
               color: blue
               transform: 'translate(0%, 0%)'
           - type: state-icon
-            icon: 'mdi:walk'
-            entity: switch.living_room_right_plug_switch
-            tap_action:
-              action: toggle
+            entity: binary_sensor.living_room_motion
             style:
               bottom: 23%
               left: 65%
@@ -393,10 +384,7 @@ views:
               color: blue
               transform: 'translate(0%, 0%)'
           - type: state-icon
-            icon: 'mdi:walk'
             entity: binary_sensor.logans_room_motion
-            tap_action:
-              action: toggle
             style:
               bottom: 21%
               right: 13%
@@ -431,10 +419,7 @@ views:
               color: blue
               transform: 'translate(0%, 0%)'
           - type: state-icon
-            icon: 'mdi:walk'
-            entity: switch.living_room_right_plug_switch
-            tap_action:
-              action: toggle
+            entity: binary_sensor.living_room_motion
             style:
               top: 37%
               left: 38%
@@ -523,7 +508,7 @@ views:
               right: 13%
               transform: 'translate(0%, 0)'
         image:
-          /local/main-floor-plan.png
+          /local/main-floor-plan.svg
   
   - title: Temperature
     path: temperature

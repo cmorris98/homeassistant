@@ -7,8 +7,10 @@ filter:
     - switch.logans_room_right_plug_switch
     - switch.logans_room_usb_plug_switch
     - binary_sensor.logans_room_motion
+    - binary_sensor.logans_xbox
     - switch.logans_xbox
     - switch.logan_sleep
+    - light.logans_light_switch_level
 
     # Living Room
     - sensor.living_room_sensor_temperature
@@ -20,7 +22,10 @@ filter:
     
     # Other
     - switch.christmas
-
+    - switch.home
+    - switch.away
+    - switch.sleep
+    - switch.vacation
 
 entity_config:
   sensor.logans_room_sensor_temperature:
@@ -37,8 +42,12 @@ entity_config:
     name: Logans Room Motion
   switch.logans_xbox:
     name: Logans Xbox
+  binary_sensor.logans_xbox:
+    name: Logans Xbox Sensor
   switch.logan_sleep:
     name: Logan Sleep
+  light.logans_light_switch_level:
+    name: Logans Light
 
   sensor.living_room_sensor_temperature:
     name: Living Room Temperature
@@ -55,3 +64,11 @@ entity_config:
 
   switch.christmas:
     name: Christmas
+  switch.home:
+    name: Home
+  switch.away:
+    name: Away
+  switch.sleep:
+    name: Sleep
+  switch.vacation:
+    name: Vacation

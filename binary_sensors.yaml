@@ -12,30 +12,33 @@
           value_template: >-
             {{ is_state('sensor.logans_room_sensor_burglar', '8') }}
 
-    occupancy_home:
-      friendly_name: Occupancy Home Sensor
-      value_template: >-
-        {{ is_state('input_select.occupancy', 'Home') }}
+    # occupancy_home:
+    #   friendly_name: Occupancy Home Sensor
+    #   device_class: presence
+    #   value_template: >-
+    #     {{ is_state('input_select.occupancy', 'Home') }}
     
-    occupancy_away:
-      friendly_name: Occupancy Away Sensor
-      value_template: >-
-        {{ is_state('input_select.occupancy', 'Away') }}
+    # occupancy_away:
+    #   friendly_name: Occupancy Away Sensor
+    #   device_class: presence
+    #   value_template: >-
+    #     {{ is_state('input_select.occupancy', 'Away') }}
 
-    occupancy_sleep:
-      friendly_name: Occupancy Sleep Sensor
-      value_template: >-
-        {{ is_state('input_select.occupancy', 'Sleep') }}
+    # occupancy_sleep:
+    #   friendly_name: Occupancy Sleep Sensor
+    #   value_template: >-
+    #     {{ is_state('input_select.occupancy', 'Sleep') }}
     
-    occupancy_vacation:
-      friendly_name: Occupancy Vacation Sensor
-      value_template: >-
-        {{ is_state('input_select.occupancy', 'Vacation') }}
-    
-    # logans_xbox_on:
-    #   friendly_name: Logans XBox On
+    # occupancy_vacation:
+    #   friendly_name: Occupancy Vacation Sensor
     #   value_template: >-
     #     {{ is_state('input_select.occupancy', 'Vacation') }}
+    
+    logans_xbox:
+      friendly_name: Logans Xbox Sensor
+      device_class: door
+      value_template: >-
+        {{ is_state_attr('remote.harmony_hub', 'current_activity', 'Xbox') }}
 
 - platform: trend
   sensors:

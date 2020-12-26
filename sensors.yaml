@@ -7,88 +7,83 @@ sensors:
     friendly_name: Living Room
     device_class: temperature
     value_template: >-
-      {{states.sensor.living_room_sensor_temperature.state}} °F  |  {{states.sensor.living_room_sensor_relative_humidity.state}} % | {{states.sensor.living_room_sensor_luminance.state}} %
+      {{states.sensor.living_room_sensor_temperature.state | round(1)}}°F ({{states.sensor.living_room_temperature_delta.state | round(1)}}) | {{states.sensor.living_room_sensor_relative_humidity.state | round(1)}}% ({{states.sensor.living_room_humidity_delta.state | round(1)}}) | {{states.sensor.living_room_sensor_luminance.state | round(1)}}%
     
   kitchen_climate:
     friendly_name: Kitchen
     device_class: temperature
     value_template: >-
-       {{states.sensor.kitchen_sensor_temperature.state}} °F  |  {{states.sensor.kitchen_sensor_relative_humidity.state}} % | {{states.sensor.kitchen_sensor_luminance.state}} %
+       {{states.sensor.kitchen_sensor_temperature.state | round(1)}}°F ({{states.sensor.kitchen_temperature_delta.state | round(1)}}) | {{states.sensor.kitchen_sensor_relative_humidity.state | round(1)}}% ({{states.sensor.kitchen_humidity_delta.state| round(1)}}) | {{states.sensor.kitchen_sensor_luminance.state | round(1)}}%
    
   pantry_climate:
     friendly_name: Pantry
     device_class: temperature
     value_template: >-
-      {{states.sensor.pantry_sensor_temperature.state}} °F  |  {{states.sensor.pantry_sensor_relative_humidity.state}} % | {{states.sensor.pantry_sensor_luminance.state}} %
+      {{states.sensor.pantry_sensor_temperature.state | round(1)}}°F ({{states.sensor.pantry_temperature_delta.state | round(1)}}) | {{states.sensor.pantry_sensor_relative_humidity.state | round(1)}}% ({{states.sensor.pantry_humidity_delta.state | round(1)}}) | {{states.sensor.pantry_sensor_luminance.state | round(1)}}%
    
   master_bedroom_climate:
     friendly_name: Master Bedroom
     device_class: temperature
     value_template: >-
-      {{states.sensor.master_bedroom_sensor_temperature.state}} °F  |  {{states.sensor.master_bedroom_sensor_relative_humidity.state}} % | {{states.sensor.master_bedroom_sensor_luminance.state}} %
+      {{states.sensor.master_bedroom_sensor_temperature.state | round(1)}}°F ({{states.sensor.master_bedroom_temperature_delta.state | round(1)}}) | {{states.sensor.master_bedroom_sensor_relative_humidity.state | round(1)}}% ({{states.sensor.master_bedroom_humidity_delta.state | round(1)}}) | {{states.sensor.master_bedroom_sensor_luminance.state | round(1)}}%
 
   master_bathroom_climate:
     friendly_name: Master Bathroom
     device_class: temperature
     value_template: >-
-      {{states.sensor.master_bathroom_sensor_temperature.state}} °F  |  {{states.sensor.master_bathroom_sensor_relative_humidity.state}} % | {{states.sensor.master_bathroom_sensor_luminance.state}} %
+      {{states.sensor.master_bathroom_sensor_temperature.state | round(1)}}°F ({{states.sensor.master_bathroom_temperature_delta.state | round(1)}}) | {{states.sensor.master_bathroom_sensor_relative_humidity.state | round(1)}}% ({{states.sensor.master_bathroom_humidity_delta.state | round(1)}}) | {{states.sensor.master_bathroom_sensor_luminance.state | round(1)}}%
 
   laundry_room_climate:
     friendly_name: Laundry Room
     device_class: temperature
     value_template: >-
-      {{states.sensor.laundry_room_sensor_temperature.state}} °F  |  {{states.sensor.laundry_room_sensor_relative_humidity.state}} % | {{states.sensor.laundry_room_sensor_luminance.state}} %
+      {{states.sensor.laundry_room_sensor_temperature.state | round(1)}}°F ({{states.sensor.laundry_room_temperature_delta.state | round(1)}}) | {{states.sensor.laundry_room_sensor_relative_humidity.state | round(1)}}% ({{states.sensor.laundry_room_humidity_delta.state | round(1)}}) | {{states.sensor.laundry_room_sensor_luminance.state | round(1)}}%
 
   mud_room_climate:
     friendly_name: Mud Room
     device_class: temperature
     value_template: >-
-      {{states.sensor.mud_room_sensor_temperature.state}} °F  |  {{states.sensor.mud_room_sensor_relative_humidity.state}} % | {{states.sensor.mud_room_sensor_luminance.state}} %
+      {{states.sensor.mud_room_sensor_temperature.state | round(1)}}°F ({{states.sensor.mud_room_temperature_delta.state | round(1)}}) | {{states.sensor.mud_room_sensor_relative_humidity.state | round(1)}}% ({{states.sensor.mud_room_humidity_delta.state | round(1)}}) | {{states.sensor.mud_room_sensor_luminance.state | round(1)}}%
   
   jocelyns_room_climate:
     friendly_name: Jocelyns Room
     device_class: temperature
     value_template: >-
-      {{states.sensor.jocelyns_room_sensor_temperature.state}} °F  |  {{states.sensor.jocelyns_room_sensor_relative_humidity.state}} % | {{states.sensor.jocelyns_room_sensor_luminance.state}} %
+      {{states.sensor.jocelyns_room_sensor_temperature.state | round(1)}}°F ({{states.sensor.jocelyns_room_temperature_delta.state | round(1)}}) | {{states.sensor.jocelyns_room_sensor_relative_humidity.state | round(1)}}% | {{states.sensor.jocelyns_room_sensor_luminance.state | round(1)}}%
 
   logans_room_climate:
     friendly_name: Logans Room
     device_class: temperature
     value_template: >-
-      {{states.sensor.logans_room_sensor_temperature.state}} °F  |  {{states.sensor.logans_room_sensor_relative_humidity.state}} % | {{states.sensor.logans_room_sensor_luminance.state}} %
+      {{states.sensor.logans_room_sensor_temperature.state | round(1)}}°F ({{states.sensor.logans_room_temperature_delta.state | round(1)}}) | {{states.sensor.logans_room_sensor_relative_humidity.state | round(1)}}% ({{states.sensor.logans_room_humidity_delta.state | round(1)}}) | {{states.sensor.logans_room_sensor_luminance.state | round(1)}}%
 
   bathroom_climate:
     friendly_name: Bathroom
     device_class: temperature
     value_template: >-
-      {{states.sensor.bathroom_sensor_temperature.state}} °F  |  {{states.sensor.bathroom_sensor_relative_humidity.state}} % | {{states.sensor.bathroom_sensor_luminance.state}} %
+      {{states.sensor.bathroom_sensor_temperature.state | round(1)}}°F ({{states.sensor.bathroom_temperature_delta.state | round(1)}}) | {{states.sensor.bathroom_sensor_relative_humidity.state | round(1)}}% ({{states.sensor.bathroom_humidity_delta.state | round(1)}}) | {{states.sensor.bathroom_sensor_luminance.state | round(1)}}%
 
   garage_climate:
     friendly_name: Garage
     device_class: temperature
     value_template: >-
-      {{states.sensor.garage_sensor_temperature.state}} °F  |  {{states.sensor.garage_sensor_relative_humidity.state}} % | {{states.sensor.garage_sensor_luminance.state}} %
+      {{states.sensor.garage_sensor_temperature.state | round(1)}}°F ({{states.sensor.garage_temperature_delta.state | round(1)}}) | {{states.sensor.garage_sensor_relative_humidity.state | round(1)}}% ({{states.sensor.garage_humidity_delta.state | round(1)}}) | {{states.sensor.garage_sensor_luminance.state | round(1)}}%
 
   front_yard_climate:
     friendly_name: Front Yard
     device_class: temperature
     value_template: >-
-      {{states.sensor.front_yard_sensor_temperature.state}} °F  |  {{states.sensor.front_yard_sensor_relative_humidity.state}} % | {{states.sensor.front_yard_sensor_luminance.state}} %
+      {{states.sensor.front_yard_sensor_temperature.state | round(1)}}°F ({{states.sensor.front_yard_temperature_delta.state | round(1)}}) | {{states.sensor.front_yard_sensor_relative_humidity.state | round(1)}}% ({{states.sensor.front_yard_humidity_delta.state | round(1)}}) | {{states.sensor.front_yard_sensor_luminance.state | round(1)}}%
 
   back_yard_climate:
     friendly_name: Back Yard
     device_class: temperature
     value_template: >-
-      {{states.sensor.back_yard_sensor_temperature.state}} °F  |  {{states.sensor.back_yard_sensor_relative_humidity.state}} % | {{states.sensor.back_yard_sensor_luminance.state}} %
-
-  master_bathroom_humidity_delta:
-    friendly_name: Master Bathroom Humidity Delta
-    value_template: '{{ (states.sensor.logans_room_sensor_relative_humidity.state | float ) - (states.sensor.living_room_sensor_relative_humidity.state | float)}}'
-    device_class: humidity
+      {{states.sensor.back_yard_sensor_temperature.state | round(1)}}°F ({{states.sensor.back_yard_temperature_delta.state | round(1)}}) | {{states.sensor.back_yard_sensor_relative_humidity.state | round(1)}}% ({{states.sensor.back_yard_humidity_delta.state | round(1)}}) | {{states.sensor.back_yard_sensor_luminance.state | round(1)}}%
 
   logans_room_temperature_delta:
     friendly_name: Logans Room Temperature Delta
-    value_template: '{{ (states.sensor.logans_room_sensor_temperature.state | float ) - (states.sensor.living_room_sensor_temperature.state | float)}}'
+    value_template: '{{ (states.sensor.logans_room_sensor_temperature.state | float) - (states.sensor.living_room_sensor_temperature.state | float)}}'
     device_class: temperature
 
   logans_room_humidity_delta:
@@ -96,7 +91,16 @@ sensors:
     value_template: '{{ (states.sensor.logans_room_sensor_relative_humidity.state | float ) - (states.sensor.living_room_sensor_relative_humidity.state | float)}}'
     device_class: humidity
 
+  living_room_temperature_delta:
+    friendly_name: Living Room Temperature Delta
+    value_template: '{{ (states.sensor.living_room_sensor_temperature.state | float ) - (states.sensor.living_room_sensor_temperature.state | float)}}'
+    device_class: temperature
+
+  living_room_humidity_delta:
+    friendly_name: Logans Room Humidity Delta
+    value_template: '{{ (states.sensor.living_room_sensor_relative_humidity.state | float ) - (states.sensor.living_room_sensor_relative_humidity.state | float)}}'
+    device_class: humidity
+    
   logans_tv:
     friendly_name: Current state Of Logans TV
     value_template: '{{ state_attr("remote.harmony_hub", "current_activity") }}'
-    

@@ -1,0 +1,7 @@
+living_room_plug_meter:
+  source: sensor.living_room_double_plug_energy
+  cycle: monthly
+
+logans_room_plug_meter:
+  source: sensor.logans_room_double_plug_energy
+  cycle: monthly

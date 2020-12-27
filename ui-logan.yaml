@@ -14,34 +14,31 @@ views:
                 tap_action:
                   action: toggle
                 entity: switch.logan_sleep
-
-              # - type: button
-              #   name: Sleep
-              #   icon: mdi:sleep
-              #   tap_action:
-              #     action: toggle
-              #   entity: input_boolean.logan_sleep
-              #   show_state: true
               - type: button
                 name: Xbox
                 icon: mdi:microsoft-xbox
                 tap_action:
                   action: toggle
                 entity: switch.logans_xbox
-          - type: custom:weather-card
-            entity: weather.openweathermap
+          - type: entities
+            state_color: true
+            entities: 
+              - type: custom:slider-entity-row
+                entity: light.logans_light_switch_level
+                toggle: true
+                name: Light
+              - entity: switch.logans_room_sound_machine_switch
+                name: Sound Machine
+              - entity: switch.logans_room_right_plug_switch
+                name: Right Plug
+
+          # - type: custom:weather-card
+          #   entity: weather.openweathermap
       
       - type: vertical-stack
         cards:
-          - type: light
-            entity: light.logans_light_switch_level
-          - type: entities
-            title: Plugs
-            icon: mdi:power-plug
-            state_color: true
-            entities: 
-              - switch.logans_room_sound_machine_switch
-              - switch.logans_room_right_plug_switch
+          # - type: light
+          #   entity: light.logans_light_switch_level
           - type: entities
             title: Xbox Friends
             icon: mdi:microsoft-xbox

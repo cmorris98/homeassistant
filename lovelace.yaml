@@ -4,6 +4,11 @@ resources:
     type: module
   - url: /local/custom-lovelace/weather-card/weather-card.js
     type: module
+  - url: /local/community/lovelace-paper-buttons-row/paper-buttons-row.js 
+    type: module
+  - url: /local/community/lovelace-slider-entity-row/slider-entity-row.js
+    type: module
+
 dashboards:
   lovelace-main:
     mode: yaml

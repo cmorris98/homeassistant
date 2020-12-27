@@ -8,8 +8,7 @@
   action:
     service: frontend.set_theme
     data:
-      # name: ios-dark-mode-light-green
-      name: iOS Dark Mode
+      name: Dark Blue
 
 - id: living_room_motion
   alias: Living Room Motion

@@ -132,18 +132,6 @@ views:
       - type: picture-elements
         elements:
           #
-          # Labels outside diagram
-          #
-          # - type: state-label
-          #   entity: sensor.speedtest_download
-          #   suffix: ' Down'
-          #   style:
-          #     top: 0%
-          #     left: 0%
-          #     color: black
-          #     transform: 'translate(0%, 0%)'
-          
-          #
           # Kitchen
           #
           - type: state-icon

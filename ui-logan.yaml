@@ -20,6 +20,12 @@ views:
                 tap_action:
                   action: toggle
                 entity: switch.logans_xbox
+              - type: button
+                name: TV
+                icon: mdi:television
+                tap_action:
+                  action: toggle
+                entity: switch.logans_tv
           - type: entities
             state_color: true
             entities: 

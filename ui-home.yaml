@@ -582,30 +582,58 @@ views:
         min: 0
         max: 100
         severity:
-          green: 80
-          yellow: 40
+          green: 55
+          yellow: 20
           red: 0
       - type: gauge
         entity: sensor.garage_battery
         min: 0
         max: 100
         severity:
-          green: 80
-          yellow: 40
+          green: 55
+          yellow: 20
           red: 0
       - type: gauge
         entity: sensor.living_room_sensor_battery_level
         min: 0
         max: 100
         severity:
-          green: 80
-          yellow: 40
+          green: 55
+          yellow: 20
           red: 0
       - type: gauge
         entity: sensor.logans_room_sensor_battery_level
         min: 0
         max: 100
         severity:
-          green: 80
-          yellow: 40
+          green: 55
+          yellow: 20
           red: 0
+  - title: Energy
+    path: energy
+    icon: mdi:lightning-bolt
+    badges: []
+    cards:
+      - type: iframe
+        url: 'http://192.168.1.208:3000/d-solo/yinjKebMk/energy?orgId=1&from=1577806546338&to=1609428946338&panelId=2" frameborder="0"'
+      - type: custom:mini-graph-card
+        name: Plugs
+        icon: mdi:lightning-bolt
+        bar_spacing: 2
+        decimals: 3
+        group_by: date
+        hours_to_show: 168
+        unit: kWh
+        entities:
+          - entity: sensor.living_room_plug_meter
+            name: Living Room
+            aggregate_func: max
+          - entity: sensor.logans_room_plug_meter
+            name: Logans Room
+            aggregate_func: max
+        show:
+          graph: bar
+          labels: false
+          # hour24: true
+          # extrema: false
+          # average: false

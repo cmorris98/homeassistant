@@ -9,6 +9,7 @@ filter:
     - binary_sensor.logans_room_motion
     - binary_sensor.logans_xbox
     - switch.logans_xbox
+    - switch.logans_tv
     - switch.logan_sleep
     - light.logans_light_switch_level
 
@@ -42,6 +43,8 @@ entity_config:
     name: Logans Room Motion
   switch.logans_xbox:
     name: Logans Xbox
+  switch.logans_tv:
+    name: Logans TV
   binary_sensor.logans_xbox:
     name: Logans Xbox Sensor
   switch.logan_sleep:

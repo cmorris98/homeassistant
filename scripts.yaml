@@ -54,7 +54,7 @@ occupancy_home:
         entity_id: switch.living_room_right_plug_switch
     - service: switch.turn_on
       data:
-        entity_id: switch.living_room_christmas_tree_switch
+        entity_id: switch.christmas
 
 occupancy_away:
   alias: Occupancy Away
@@ -70,7 +70,7 @@ occupancy_away:
         entity_id: switch.living_room_right_plug_switch
     - service: switch.turn_off
       data:
-        entity_id: switch.living_room_christmas_tree_switch
+        entity_id: switch.christmas
 
 occupancy_sleep:
   alias: Occupancy Sleep
@@ -86,7 +86,7 @@ occupancy_sleep:
         entity_id: switch.living_room_right_plug_switch
     - service: switch.turn_off
       data:
-        entity_id: switch.living_room_christmas_tree_switch
+        entity_id: switch.christmas
 
 occupancy_vacation:
   alias: Occupancy Vacation
@@ -102,7 +102,7 @@ occupancy_vacation:
         entity_id: switch.living_room_right_plug_switch
     - service: switch.turn_off
       data:
-        entity_id: switch.living_room_christmas_tree_switch
+        entity_id: switch.christmas
 
 turn_on_christmas:
   alias: Turn on Christmas

@@ -615,7 +615,7 @@ views:
     badges: []
     cards:
       - type: iframe
-        url: 'http://192.168.1.208:3000/d-solo/yinjKebMk/energy?orgId=1&from=1577806546338&to=1609428946338&panelId=2" frameborder="0"'
+        url: 'http://192.168.1.208:3000/d-solo/yinjKebMk/energy?orgId=1&panelId=2" frameborder="0"'
       - type: custom:mini-graph-card
         name: Plugs
         icon: mdi:lightning-bolt
@@ -634,6 +634,3 @@ views:
         show:
           graph: bar
           labels: false
-          # hour24: true
-          # extrema: false
-          # average: false

@@ -43,18 +43,18 @@ views:
       
       - type: vertical-stack
         cards:
-          # - type: light
-          #   entity: light.logans_light_switch_level
-          - type: entities
-            title: Xbox Friends
-            icon: mdi:microsoft-xbox
-            state_color: true
-            entities: 
-              - binary_sensor.akasato8387
-              - binary_sensor.bb8sgr8
-              - binary_sensor.virtualworids
-              - binary_sensor.operatedflyer29
-              - binary_sensor.jst_planets
+          - type: custom:auto-entities
+            card: 
+              type: entities
+              title: Xbox Friends
+              icon: mdi:microsoft-xbox
+              state_color: true
+            filter:
+              include:
+                - domain: binary_sensor
+                  area: Logans Room
+              exclude:
+                - name: "Logans Room Sensor*"
 
       - type: vertical-stack
         cards:

@@ -1,13 +1,27 @@
+# An * ensures that everything will be ignored.
+*
+
+# You can whitelist files/folders with !, these will not be ignored.
+!*.yaml
+!.gitignore
+!*.md
+!*.svg
+!*.png
+!*.jpg
+!bin
+!.vscode
+!www
+!blueprints
+!themes
+
+# Ensure these folders are ignored
+.storage
+.cloud
+.google.token
+custom_components
+
+# Ensure these YAML files are ignored
+ip_bans.yaml
 secrets.yaml
-zones.yaml
-*.xml
-*.db
-*.db-shm
-*.sqlite
-*.log
-.storage/
-.cloud/
-OZW_Log.txt
-harmony_harmony_hub.conf
 known_devices.yaml
-custom_components/hacs
+zones.yaml
